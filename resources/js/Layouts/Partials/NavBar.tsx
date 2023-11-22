@@ -3,33 +3,39 @@ import { t } from "i18next";
 import BrazilFlag from "@/Components/Icons/BrazilFlag";
 import SpainFlag from "@/Components/Icons/SpainFlag";
 import UnitedStatesFlag from "@/Components/Icons/UnitedStatesFlag";
+import { User } from "@/types";
 
-const NavBar = ({ currentLink }: { currentLink: string }) => {
+const NavBar = ({ currentLink, user }: { user?: User; currentLink: string }) => {
   const routes = [
     {
       label: t("Home"),
       href: route("home.index"),
       link: "home",
+      protected: false,
     },
     {
       label: t("Access"),
       href: route("access.index"),
       link: "access",
+      protected: true,
     },
     {
       label: t("Users"),
       href: route("users.index"),
       link: "users",
+      protected: true,
     },
     {
       label: t("About"),
-      href: route("users.index"),
+      href: route("about.index"),
       link: "about",
+      protected: false,
     },
     {
       label: t("Contact"),
-      href: route("users.index"),
+      href: route("contact.index"),
       link: "contact",
+      protected: false,
     },
   ];
 
@@ -38,25 +44,20 @@ const NavBar = ({ currentLink }: { currentLink: string }) => {
       <div className="container mx-auto flex items-center justify-between">
         <nav>
           <ul className="flex items-center gap-6 text-sm">
-            {routes.map((route) => (
-              <li
-                className={`py-2 ${
-                  currentLink === route.link
-                    ? "border-b-2 border-white font-bold"
-                    : ""
-                }`}
-                key={route.link}
-              >
-                <Link
-                  href={route.href}
-                  className={
-                    currentLink !== route.link ? "hover:text-gray-200" : ""
-                  }
-                >
-                  {route.label}
-                </Link>
-              </li>
-            ))}
+            {routes.map((route) => {
+              if (!route.protected || (route.protected && user)) {
+                return (
+                  <li
+                    className={`py-2 ${currentLink === route.link ? "border-b-2 border-white font-bold" : ""}`}
+                    key={route.link}
+                  >
+                    <Link href={route.href} className={currentLink !== route.link ? "hover:text-gray-200" : ""}>
+                      {route.label}
+                    </Link>
+                  </li>
+                );
+              }
+            })}
           </ul>
         </nav>
 

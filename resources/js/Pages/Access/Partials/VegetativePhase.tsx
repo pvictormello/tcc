@@ -15,7 +15,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod7")} error={errors.cod7}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("Anual")}
+                label={t("Annual")}
                 name="cod7"
                 value="1"
                 checked={data.cod7 === 1}
@@ -23,7 +23,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Bienal")}
+                label={t("Biennial")}
                 name="cod7"
                 value="2"
                 checked={data.cod7 === 2}
@@ -31,7 +31,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Perene")}
+                label={t("Perennial")}
                 name="cod7"
                 value="3"
                 checked={data.cod7 === 3}
@@ -43,7 +43,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod8")} error={errors.cod8}>
             <RadioGroup gridCols="grid-cols-4">
               <RadioGroupItem
-                label={t("Verde")}
+                label={t("Green")}
                 name="cod8"
                 value="1"
                 checked={data.cod8 === 1}
@@ -51,7 +51,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Verde com estrias roxas")}
+                label={t("Green with purple stripes")}
                 name="cod8"
                 value="2"
                 checked={data.cod8 === 2}
@@ -59,7 +59,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Roxo")}
+                label={t("Purple")}
                 name="cod8"
                 value="3"
                 checked={data.cod8 === 3}
@@ -67,7 +67,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Outros")}
+                label={t("Others")}
                 name="cod8"
                 value="4"
                 checked={data.cod8 === 4}
@@ -81,7 +81,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod9")} error={errors.cod9}>
             <RadioGroup gridCols="grid-cols-4">
               <RadioGroupItem
-                label={t("Verde")}
+                label={t("Green")}
                 name="cod9"
                 value="1"
                 checked={data.cod9 === 1}
@@ -89,7 +89,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Roxo claro")}
+                label={t("Light purple")}
                 name="cod9"
                 value="3"
                 checked={data.cod9 === 3}
@@ -97,7 +97,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Roxo")}
+                label={t("Purple")}
                 name="cod9"
                 value="5"
                 checked={data.cod9 === 5}
@@ -105,7 +105,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Roxo escuro")}
+                label={t("Dark purple")}
                 name="cod9"
                 value="7"
                 checked={data.cod9 === 7}
@@ -117,7 +117,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod10")} error={errors.cod10}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("Cilindrica")}
+                label={t("Cylindrical")}
                 name="cod10"
                 value="1"
                 checked={data.cod10 === 1}
@@ -125,7 +125,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Angular")}
+                label={t("Angled")}
                 name="cod10"
                 value="2"
                 checked={data.cod10 === 2}
@@ -133,7 +133,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Achatado")}
+                label={t("Flattened")}
                 name="cod10"
                 value="3"
                 checked={data.cod10 === 3}
@@ -146,7 +146,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod11")} error={errors.cod11}>
           <RadioGroup gridCols="grid-cols-3">
             <RadioGroupItem
-              label={t("Esparso")}
+              label={t("Sparse")}
               image="/images/access/tricomas_caule_1.png"
               name="cod11"
               value="3"
@@ -155,7 +155,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Intermediário")}
+              label={t("Intermediate")}
               image="/images/access/tricomas_caule_2.png"
               name="cod11"
               value="5"
@@ -164,7 +164,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Denso")}
+              label={t("Dense")}
               image="/images/access/tricomas_caule_3.png"
               name="cod11"
               value="7"
@@ -178,7 +178,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod12")} error={errors.cod12}>
             <RadioGroup gridCols="grid-cols-5">
               <RadioGroupItem
-                label={t("< 25 ")}
+                label={t("< 25")}
                 name="cod12"
                 value="1"
                 checked={data.cod12 === 1}
@@ -222,7 +222,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod13")} error={errors.cod13}>
             <RadioGroup gridCols="grid-cols-4">
               <RadioGroupItem
-                label={t("Prostada deitada")}
+                label={t("Prostrate")}
                 name="cod13"
                 value="3"
                 checked={data.cod13 === 3}
@@ -230,7 +230,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Intermediária")}
+                label={t("Intermediate")}
                 name="cod13"
                 value="5"
                 checked={data.cod13 === 5}
@@ -238,7 +238,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Ereta")}
+                label={t("Erect")}
                 name="cod13"
                 value="7"
                 checked={data.cod13 === 7}
@@ -246,7 +246,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Outros")}
+                label={t("Others")}
                 name="cod13"
                 value="9"
                 checked={data.cod13 === 9}
@@ -291,7 +291,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod17")} error={errors.cod17}>
           <RadioGroup gridCols="grid-cols-3">
             <RadioGroupItem
-              label={t("Esparso")}
+              label={t("Sparse")}
               image="/images/access/habito_ramificacao_1.png"
               name="cod17"
               value="3"
@@ -300,7 +300,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Intermediário")}
+              label={t("Intermediate")}
               image="/images/access/habito_ramificacao_2.png"
               name="cod17"
               value="5"
@@ -309,7 +309,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Denso")}
+              label={t("Dense")}
               image="/images/access/habito_ramificacao_3.png"
               name="cod17"
               value="7"
@@ -323,7 +323,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod18")} error={errors.cod18}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("Esparso")}
+                label={t("Sparse")}
                 name="cod18"
                 value="3"
                 checked={data.cod18 === 3}
@@ -331,7 +331,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Intermediário")}
+                label={t("Intermediate")}
                 name="cod18"
                 value="5"
                 checked={data.cod18 === 5}
@@ -339,7 +339,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Denso")}
+                label={t("Dense")}
                 name="cod18"
                 value="7"
                 checked={data.cod18 === 7}
@@ -351,7 +351,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod19")} error={errors.cod19}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("Esparso")}
+                label={t("Sparse")}
                 name="cod19"
                 value="3"
                 checked={data.cod19 === 3}
@@ -359,7 +359,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Intermediário")}
+                label={t("Intermediate")}
                 name="cod19"
                 value="5"
                 checked={data.cod19 === 5}
@@ -367,7 +367,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("Denso")}
+                label={t("Dense")}
                 name="cod19"
                 value="7"
                 checked={data.cod19 === 7}
@@ -380,7 +380,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod20")} error={errors.cod20}>
           <RadioGroup gridCols="grid-cols-4">
             <RadioGroupItem
-              label={t("Amarelo")}
+              label={t("Yellow")}
               name="cod20"
               value="1"
               checked={data.cod20 === 1}
@@ -388,7 +388,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Verde claro")}
+              label={t("Light green")}
               name="cod20"
               value="2"
               checked={data.cod20 === 2}
@@ -396,7 +396,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Verde")}
+              label={t("Green")}
               name="cod20"
               value="3"
               checked={data.cod20 === 3}
@@ -404,7 +404,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Verde escuro")}
+              label={t("Dark green")}
               name="cod20"
               value="4"
               checked={data.cod20 === 4}
@@ -412,7 +412,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Roxo claro")}
+              label={t("Light purple")}
               name="cod20"
               value="5"
               checked={data.cod20 === 5}
@@ -420,7 +420,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Roxo")}
+              label={t("Purple")}
               name="cod20"
               value="6"
               checked={data.cod20 === 6}
@@ -428,7 +428,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Variegado")}
+              label={t("Variegated")}
               name="cod20"
               value="7"
               checked={data.cod20 === 7}
@@ -436,7 +436,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Outros")}
+              label={t("Others")}
               name="cod20"
               value="8"
               checked={data.cod20 === 8}
@@ -448,7 +448,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod21")} error={errors.cod21}>
           <RadioGroup gridCols="grid-cols-3">
             <RadioGroupItem
-              label={t("Delta")}
+              label={t("Deltoid")}
               image="/images/access/forma_folha_1.png"
               name="cod21"
               value="1"
@@ -457,7 +457,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Ovada")}
+              label={t("Ovate")}
               image="/images/access/forma_folha_2.png"
               name="cod21"
               value="2"
@@ -466,7 +466,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Lanceolada")}
+              label={t("Lanceolate")}
               image="/images/access/forma_folha_3.png"
               name="cod21"
               value="3"
@@ -479,7 +479,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod22")} error={errors.cod22}>
           <RadioGroup gridCols="grid-cols-3">
             <RadioGroupItem
-              label={t("Inteira")}
+              label={t("Entire")}
               name="cod22"
               value="1"
               checked={data.cod22 === 1}
@@ -487,7 +487,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Ondular")}
+              label={t("Ondulate")}
               name="cod22"
               value="2"
               checked={data.cod22 === 2}
@@ -495,7 +495,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Ciliada")}
+              label={t("Ciliate")}
               name="cod22"
               value="3"
               checked={data.cod22 === 3}
@@ -507,7 +507,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod23")} error={errors.cod23}>
           <RadioGroup gridCols="grid-cols-3">
             <RadioGroupItem
-              label={t("Esparso")}
+              label={t("Sparse")}
               image="/images/access/presenca_tricomas_folha_1.png"
               name="cod23"
               value="3"
@@ -516,7 +516,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Intermediário")}
+              label={t("Intermediate")}
               image="/images/access/presenca_tricomas_folha_2.png"
               name="cod23"
               value="5"
@@ -525,7 +525,7 @@ const VegetativePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("Denso")}
+              label={t("Dense")}
               image="/images/access/presenca_tricomas_folha_3.png"
               name="cod23"
               value="7"

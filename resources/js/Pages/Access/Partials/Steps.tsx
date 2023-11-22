@@ -47,12 +47,9 @@ const Steps = ({
   });
 
   return (
-    <ol className="flex w-full border border-gray-200 bg-white rounded-lg">
+    <ol className="flex w-full bg-white rounded-lg shadow">
       <li className={listItem({ selected: currentStep >= 1 })}>
-        <button
-          onClick={() => setCurrentStep(1)}
-          className="flex items-center gap-4 w-full h-full px-6 py-4 text-sm"
-        >
+        <button onClick={() => setCurrentStep(1)} className="flex items-center gap-4 w-full h-full px-6 py-4 text-sm">
           <div
             className={step({
               selected: currentStep > 1,
@@ -60,11 +57,7 @@ const Steps = ({
               disabled: currentStep < 1,
             })}
           >
-            {currentStep > 1 ? (
-              <CheckIcon className="h-4 w-4" />
-            ) : (
-              <div>01</div>
-            )}
+            {currentStep > 1 ? <CheckIcon className="h-4 w-4" /> : <div>01</div>}
           </div>
           <div
             className={label({
@@ -89,11 +82,7 @@ const Steps = ({
               disabled: currentStep < 2,
             })}
           >
-            {currentStep > 2 ? (
-              <CheckIcon className="h-4 w-4" />
-            ) : (
-              <div>02</div>
-            )}
+            {currentStep > 2 ? <CheckIcon className="h-4 w-4" /> : <div>02</div>}
           </div>
           <div
             className={label({
@@ -106,17 +95,8 @@ const Steps = ({
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
-          <svg
-            className="h-full w-full text-gray-200"
-            viewBox="0 0 12 82"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0.5 0V31L10.5 41L0.5 51V82"
-              stroke="currentcolor"
-              vector-effect="non-scaling-stroke"
-            ></path>
+          <svg className="h-full w-full text-gray-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
+            <path d="M0.5 0V31L10.5 41L0.5 51V82" stroke="currentcolor" vector-effect="non-scaling-stroke"></path>
           </svg>
         </div>
       </li>
@@ -133,11 +113,7 @@ const Steps = ({
               disabled: currentStep < 3,
             })}
           >
-            {currentStep > 3 ? (
-              <CheckIcon className="h-4 w-4" />
-            ) : (
-              <div>03</div>
-            )}
+            {currentStep > 3 ? <CheckIcon className="h-4 w-4" /> : <div>03</div>}
           </div>
           <div
             className={label({
@@ -150,17 +126,8 @@ const Steps = ({
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
-          <svg
-            className="h-full w-full text-gray-200"
-            viewBox="0 0 12 82"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0.5 0V31L10.5 41L0.5 51V82"
-              stroke="currentcolor"
-              vector-effect="non-scaling-stroke"
-            ></path>
+          <svg className="h-full w-full text-gray-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
+            <path d="M0.5 0V31L10.5 41L0.5 51V82" stroke="currentcolor" vector-effect="non-scaling-stroke"></path>
           </svg>
         </div>
       </li>
@@ -177,11 +144,7 @@ const Steps = ({
               disabled: currentStep < 4,
             })}
           >
-            {currentStep > 4 ? (
-              <CheckIcon className="h-4 w-4" />
-            ) : (
-              <div>04</div>
-            )}
+            {currentStep > 4 ? <CheckIcon className="h-4 w-4" /> : <div>04</div>}
           </div>
           <div
             className={label({
@@ -194,17 +157,8 @@ const Steps = ({
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
-          <svg
-            className="h-full w-full text-gray-200"
-            viewBox="0 0 12 82"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0.5 0V31L10.5 41L0.5 51V82"
-              stroke="currentcolor"
-              vector-effect="non-scaling-stroke"
-            ></path>
+          <svg className="h-full w-full text-gray-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
+            <path d="M0.5 0V31L10.5 41L0.5 51V82" stroke="currentcolor" vector-effect="non-scaling-stroke"></path>
           </svg>
         </div>
       </li>
@@ -221,11 +175,7 @@ const Steps = ({
               disabled: currentStep < 5,
             })}
           >
-            {currentStep > 5 ? (
-              <CheckIcon className="h-4 w-4" />
-            ) : (
-              <div>05</div>
-            )}
+            {currentStep > 5 ? <CheckIcon className="h-4 w-4" /> : <div>05</div>}
           </div>
           <div
             className={label({
@@ -237,17 +187,8 @@ const Steps = ({
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
-          <svg
-            className="h-full w-full text-gray-200"
-            viewBox="0 0 12 82"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0.5 0V31L10.5 41L0.5 51V82"
-              stroke="currentcolor"
-              vector-effect="non-scaling-stroke"
-            ></path>
+          <svg className="h-full w-full text-gray-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
+            <path d="M0.5 0V31L10.5 41L0.5 51V82" stroke="currentcolor" vector-effect="non-scaling-stroke"></path>
           </svg>
         </div>
       </li>

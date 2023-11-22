@@ -4,6 +4,7 @@ use App\Http\Controllers\AccessController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +19,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
+Route::get('/sobre', function () {
+    return Inertia::render('About');
+})->name('about.index');
+
+Route::get('/contato', function () {
+    return Inertia::render('Contact');
+})->name('contact.index');
+
 Route::middleware('auth')->group(function () {
     Route::get('/acessos', [AccessController::class, 'index'])->name('access.index');
     Route::get('/acessos/novo', [AccessController::class, 'create'])->name('access.create');
     Route::post('/acessos/novo', [AccessController::class, 'store'])->name('access.store');
+    Route::post('/acessos/imagens', [AccessController::class, 'store_image'])->name('access.store_image');
+    Route::delete('/acessos/imagens', [AccessController::class, 'destroy_image'])->name('access.destroy_image');
     Route::get('/acessos/{id}/editar', [AccessController::class, 'edit'])->name('access.edit');
     Route::put('/acessos/{id}/editar', [AccessController::class, 'update'])->name('access.update');
     Route::delete('/acessos/{id}', [AccessController::class, 'destroy'])->name('access.destroy');
-    Route::post('/acessos/imagens', [AccessController::class, 'store_image'])->name('access.store_image');
 
     Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
     Route::get('/usuarios/novo', [UserController::class, 'create'])->name('users.create');

@@ -3,17 +3,13 @@ import { PropsWithChildren } from "react";
 import Header from "./Partials/Header";
 import NavBar from "./Partials/NavBar";
 
-const Layout = ({
-  user,
-  currentLink,
-  children,
-}: PropsWithChildren<{ user?: User; currentLink: string }>) => {
+const Layout = ({ user, currentLink, children }: PropsWithChildren<{ user?: User; currentLink: string }>) => {
   return (
     <>
       <header className="shadow">
         <Header user={user} />
 
-        <NavBar currentLink={currentLink} />
+        <NavBar user={user} currentLink={currentLink} />
       </header>
 
       <main className="min-h-[calc(100vh-178px)]">{children}</main>

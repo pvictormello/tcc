@@ -31,10 +31,12 @@ const AccessImages = ({ data, setData }: AccessFormProps) => {
   };
 
   const deleteImage = (image: string) => {
-    setData(
-      "images",
-      data.images.filter((item) => item !== image),
-    );
+    axios.delete("/acessos/imagens", { data: { image } }).then(() => {
+      setData(
+        "images",
+        data.images.filter((item) => item !== image),
+      );
+    });
   };
 
   return (
@@ -54,7 +56,7 @@ const AccessImages = ({ data, setData }: AccessFormProps) => {
           </div>
 
           <Button size="full" onClick={() => uploadImage()}>
-            Enviar
+            {t("Upload")}
           </Button>
         </div>
       </div>
@@ -62,16 +64,16 @@ const AccessImages = ({ data, setData }: AccessFormProps) => {
       <div className="w-2/3">
         {data.images.length === 0 && (
           <div className="w-full rounded-md bg-blue-50 p-4 text-sm font-medium text-blue-800">
-            Faça o upload das imagens ao lado
+            {t("Upload images in the field below")}
           </div>
         )}
         {data.images.length > 0 && (
           <table className="w-full">
             <thead className="border-b-2 border-gray-200 text-left text-sm font-semibold">
               <tr>
-                <th className="px-3 py-4">Nome</th>
-                <th className="px-3 py-4">Imagem</th>
-                <th className="py-4 pl-3">Ações</th>
+                <th className="px-3 py-4">{t("Name")}</th>
+                <th className="px-3 py-4">{t("Image")}</th>
+                <th className="py-4 pl-3">{t("Actions")}</th>
               </tr>
             </thead>
             <tbody className="text-sm">

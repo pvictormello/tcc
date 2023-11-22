@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Head, Link, router } from "@inertiajs/react";
-import { Access, PageProps, User } from "@/types";
+import { IAccess, PageProps } from "@/types";
 import Layout from "@/Layouts/Layout";
 import { t } from "i18next";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
@@ -10,7 +10,7 @@ import ButtonGroup, { ButtonGroupItem } from "@/Components/ButtonGroup";
 import Modal from "@/Components/Modal";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-const Index = ({ auth, access }: PageProps<{ access: Access[] }>) => {
+const Index = ({ auth, access }: PageProps<{ access: IAccess[] }>) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [accessToDelete, setAccessToDelete] = useState<number | null>(null);
 

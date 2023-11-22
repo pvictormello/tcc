@@ -24,7 +24,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod27")} error={errors.cod27}>
           <RadioGroup gridCols="grid-cols-5">
             <RadioGroupItem
-              label={t("cod27")}
+              label={t("One")}
               name="cod27"
               value="1"
               checked={data.cod27 === 1}
@@ -32,7 +32,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod27")}
+              label={t("Two")}
               name="cod27"
               value="2"
               checked={data.cod27 === 2}
@@ -40,7 +40,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod27")}
+              label={t("Three or more")}
               name="cod27"
               value="3"
               checked={data.cod27 === 3}
@@ -48,7 +48,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod27")}
+              label={t("Many flowers in bunches but each in individual axile")}
               name="cod27"
               value="4"
               checked={data.cod27 === 4}
@@ -56,7 +56,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod27")}
+              label={t("Other cultivars with two flowers in the first axile")}
               name="cod27"
               value="5"
               checked={data.cod27 === 5}
@@ -68,7 +68,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod28")} error={errors.cod28}>
           <RadioGroup gridCols="grid-cols-3">
             <RadioGroupItem
-              label={t("cod28")}
+              label={t("Pendant")}
               image="/images/access/posicao_flor_1.png"
               name="cod28"
               value="3"
@@ -77,7 +77,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod28")}
+              label={t("Intermediate")}
               image="/images/access/posicao_flor_2.png"
               name="cod28"
               value="5"
@@ -86,7 +86,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod28")}
+              label={t("Erect")}
               image="/images/access/posicao_flor_3.png"
               name="cod28"
               value="7"
@@ -99,7 +99,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod29")} error={errors.cod29}>
           <RadioGroup gridCols="grid-cols-9">
             <RadioGroupItem
-              label={t("cod29")}
+              label={t("White")}
               name="cod29"
               value="1"
               checked={data.cod29 === 1}
@@ -107,7 +107,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod29")}
+              label={t("Light green")}
               name="cod29"
               value="2"
               checked={data.cod29 === 2}
@@ -115,7 +115,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod29")}
+              label={t("Yellow")}
               name="cod29"
               value="3"
               checked={data.cod29 === 3}
@@ -123,7 +123,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod29")}
+              label={t("Yellow-green")}
               name="cod29"
               value="4"
               checked={data.cod29 === 4}
@@ -131,7 +131,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod29")}
+              label={t("Purple with white base")}
               name="cod29"
               value="5"
               checked={data.cod29 === 5}
@@ -139,7 +139,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod29")}
+              label={t("White with purple base")}
               name="cod29"
               value="6"
               checked={data.cod29 === 6}
@@ -147,7 +147,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod29")}
+              label={t("White with purple margin")}
               name="cod29"
               value="7"
               checked={data.cod29 === 7}
@@ -155,7 +155,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod29")}
+              label={t("Purple")}
               name="cod29"
               value="8"
               checked={data.cod29 === 8}
@@ -163,7 +163,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod29")}
+              label={t("Others")}
               name="cod29"
               value="9"
               checked={data.cod29 === 9}
@@ -175,7 +175,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod30")} error={errors.cod30}>
           <RadioGroup gridCols="grid-cols-6">
             <RadioGroupItem
-              label={t("cod30")}
+              label={t("White")}
               name="cod30"
               value="1"
               checked={data.cod30 === 1}
@@ -183,7 +183,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod30")}
+              label={t("Yellow")}
               name="cod30"
               value="2"
               checked={data.cod30 === 2}
@@ -191,7 +191,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod30")}
+              label={t("Yellow-green")}
               name="cod30"
               value="3"
               checked={data.cod30 === 3}
@@ -199,7 +199,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod30")}
+              label={t("Green")}
               name="cod30"
               value="4"
               checked={data.cod30 === 4}
@@ -207,7 +207,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod30")}
+              label={t("Purple")}
               name="cod30"
               value="5"
               checked={data.cod30 === 5}
@@ -215,7 +215,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod30")}
+              label={t("Others")}
               name="cod30"
               value="6"
               checked={data.cod30 === 6}
@@ -228,7 +228,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod31")} error={errors.cod31}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod31")}
+                label={t("Rotate")}
                 name="cod31"
                 value="1"
                 checked={data.cod31 === 1}
@@ -236,7 +236,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod31")}
+                label={t("Campanulate")}
                 name="cod31"
                 value="2"
                 checked={data.cod31 === 2}
@@ -244,7 +244,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod31")}
+                label={t("Others")}
                 name="cod31"
                 value="3"
                 checked={data.cod31 === 3}
@@ -256,7 +256,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod32")} error={errors.cod32}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod32")}
+                label={t("< 15")}
                 name="cod32"
                 value="1"
                 checked={data.cod32 === 1}
@@ -264,7 +264,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod32")}
+                label={t("15 - 25")}
                 name="cod32"
                 value="2"
                 checked={data.cod32 === 2}
@@ -272,7 +272,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod32")}
+                label={t("> 25")}
                 name="cod32"
                 value="3"
                 checked={data.cod32 === 3}
@@ -285,7 +285,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod33")} error={errors.cod33}>
           <RadioGroup gridCols="grid-cols-6">
             <RadioGroupItem
-              label={t("cod33")}
+              label={t("White")}
               name="cod33"
               value="1"
               checked={data.cod33 === 1}
@@ -293,7 +293,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod33")}
+              label={t("Yellow")}
               name="cod33"
               value="2"
               checked={data.cod33 === 2}
@@ -301,7 +301,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod33")}
+              label={t("Pale blue")}
               name="cod33"
               value="3"
               checked={data.cod33 === 3}
@@ -309,7 +309,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod33")}
+              label={t("Blue")}
               name="cod33"
               value="4"
               checked={data.cod33 === 4}
@@ -317,7 +317,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod33")}
+              label={t("Purple")}
               name="cod33"
               value="5"
               checked={data.cod33 === 5}
@@ -325,7 +325,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod33")}
+              label={t("Others")}
               name="cod33"
               value="6"
               checked={data.cod33 === 6}
@@ -337,7 +337,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod35")} error={errors.cod35}>
           <RadioGroup gridCols="grid-cols-7">
             <RadioGroupItem
-              label={t("cod35")}
+              label={t("White")}
               name="cod35"
               value="1"
               checked={data.cod35 === 1}
@@ -345,7 +345,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod35")}
+              label={t("Yellow")}
               name="cod35"
               value="2"
               checked={data.cod35 === 2}
@@ -353,7 +353,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod35")}
+              label={t("Green")}
               name="cod35"
               value="3"
               checked={data.cod35 === 3}
@@ -361,7 +361,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod35")}
+              label={t("Blue")}
               name="cod35"
               value="4"
               checked={data.cod35 === 4}
@@ -369,7 +369,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod35")}
+              label={t("Light purple")}
               name="cod35"
               value="5"
               checked={data.cod35 === 5}
@@ -377,7 +377,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod35")}
+              label={t("Purple")}
               name="cod35"
               value="6"
               checked={data.cod35 === 6}
@@ -385,7 +385,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod35")}
+              label={t("Others")}
               name="cod35"
               value="7"
               checked={data.cod35 === 7}
@@ -420,7 +420,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod37")} error={errors.cod37}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod37")}
+                label={t("Inserted")}
                 name="cod37"
                 value="3"
                 checked={data.cod37 === 3}
@@ -428,7 +428,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod37")}
+                label={t("Same level")}
                 name="cod37"
                 value="5"
                 checked={data.cod37 === 5}
@@ -436,7 +436,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod37")}
+                label={t("Exserted")}
                 name="cod37"
                 value="7"
                 checked={data.cod37 === 7}
@@ -448,7 +448,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod38")} error={errors.cod38}>
             <RadioGroup gridCols="grid-cols-2">
               <RadioGroupItem
-                label={t("cod38")}
+                label={t("Absent")}
                 name="cod38"
                 value="1"
                 checked={data.cod38 === 1}
@@ -456,7 +456,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod38")}
+                label={t("Present")}
                 name="cod38"
                 value="2"
                 checked={data.cod38 === 2}
@@ -468,7 +468,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod39")} error={errors.cod39}>
             <RadioGroup gridCols="grid-cols-2">
               <RadioGroupItem
-                label={t("cod39")}
+                label={t("Absent")}
                 name="cod39"
                 value="1"
                 checked={data.cod39 === 1}
@@ -476,7 +476,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod39")}
+                label={t("Present")}
                 name="cod39"
                 value="2"
                 checked={data.cod39 === 2}
@@ -489,7 +489,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod40")} error={errors.cod40}>
           <RadioGroup gridCols="grid-cols-4">
             <RadioGroupItem
-              label={t("cod40")}
+              label={t("Whole")}
               image="/images/access/margem_calice_1.png"
               name="cod40"
               value="1"
@@ -498,7 +498,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod40")}
+              label={t("Intermediate")}
               image="/images/access/margem_calice_2.png"
               name="cod40"
               value="2"
@@ -507,7 +507,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod40")}
+              label={t("Dentate")}
               image="/images/access/margem_calice_3.png"
               name="cod40"
               value="3"
@@ -516,7 +516,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod40")}
+              label={t("Others")}
               name="cod40"
               value="4"
               checked={data.cod40 === 4}
@@ -528,20 +528,20 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod41")} error={errors.cod41}>
           <RadioGroup gridCols="grid-cols-2">
             <RadioGroupItem
-              label={t("cod41")}
+              label={t("Absent")}
               image="/images/access/constituicao_anelar_calice_1.png"
               name="cod41"
-              value="0"
-              checked={data.cod41 === 0}
+              value="1"
+              checked={data.cod41 === 1}
               onChange={(e) => setData("cod41", Number(e.target.value))}
             />
 
             <RadioGroupItem
-              label={t("cod41")}
+              label={t("Present")}
               image="/images/access/constituicao_anelar_calice_2.png"
               name="cod41"
-              value="1"
-              checked={data.cod41 === 1}
+              value="2"
+              checked={data.cod41 === 2}
               onChange={(e) => setData("cod41", Number(e.target.value))}
             />
           </RadioGroup>
@@ -573,7 +573,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod43")} error={errors.cod43}>
             <RadioGroup gridCols="grid-cols-2">
               <RadioGroupItem
-                label={t("cod43")}
+                label={t("Absent")}
                 name="cod43"
                 value="1"
                 checked={data.cod43 === 1}
@@ -581,10 +581,10 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod43")}
+                label={t("Present")}
                 name="cod43"
-                value="1"
-                checked={data.cod43 === 1}
+                value="2"
+                checked={data.cod43 === 2}
                 onChange={(e) => setData("cod43", Number(e.target.value))}
               />
             </RadioGroup>
@@ -593,7 +593,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod45")} error={errors.cod45}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod45")}
+                label={t("Low")}
                 name="cod45"
                 value="3"
                 checked={data.cod45 === 3}
@@ -601,7 +601,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod45")}
+                label={t("Intermediate")}
                 name="cod45"
                 value="5"
                 checked={data.cod45 === 5}
@@ -609,7 +609,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod45")}
+                label={t("High")}
                 name="cod45"
                 value="7"
                 checked={data.cod45 === 7}
@@ -622,7 +622,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod44")} error={errors.cod44}>
           <RadioGroup gridCols="grid-cols-7">
             <RadioGroupItem
-              label={t("cod44")}
+              label={t("White")}
               name="cod44"
               value="1"
               checked={data.cod44 === 1}
@@ -630,7 +630,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod44")}
+              label={t("Yellow")}
               name="cod44"
               value="2"
               checked={data.cod44 === 2}
@@ -638,7 +638,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod44")}
+              label={t("Green")}
               name="cod44"
               value="3"
               checked={data.cod44 === 3}
@@ -646,7 +646,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod44")}
+              label={t("Orange")}
               name="cod44"
               value="4"
               checked={data.cod44 === 4}
@@ -654,7 +654,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod44")}
+              label={t("Purple")}
               name="cod44"
               value="5"
               checked={data.cod44 === 5}
@@ -662,7 +662,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod44")}
+              label={t("Dark purple")}
               name="cod44"
               value="6"
               checked={data.cod44 === 6}
@@ -670,7 +670,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod44")}
+              label={t("Others")}
               name="cod44"
               value="7"
               checked={data.cod44 === 7}
@@ -682,7 +682,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod47")} error={errors.cod47}>
           <RadioGroup gridCols="grid-cols-7">
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("White")}
               name="cod47"
               value="1"
               checked={data.cod47 === 1}
@@ -690,7 +690,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Lemon-yellow")}
               name="cod47"
               value="2"
               checked={data.cod47 === 2}
@@ -698,7 +698,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Pale orange-yellow")}
               name="cod47"
               value="3"
               checked={data.cod47 === 3}
@@ -706,7 +706,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Orange-yellow")}
               name="cod47"
               value="4"
               checked={data.cod47 === 4}
@@ -714,7 +714,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Pale orange")}
               name="cod47"
               value="5"
               checked={data.cod47 === 5}
@@ -722,7 +722,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Orange")}
               name="cod47"
               value="6"
               checked={data.cod47 === 6}
@@ -730,7 +730,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Light red")}
               name="cod47"
               value="7"
               checked={data.cod47 === 7}
@@ -738,7 +738,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Red")}
               name="cod47"
               value="8"
               checked={data.cod47 === 8}
@@ -746,7 +746,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Dark red")}
               name="cod47"
               value="9"
               checked={data.cod47 === 9}
@@ -754,7 +754,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Purple")}
               name="cod47"
               value="10"
               checked={data.cod47 === 10}
@@ -762,7 +762,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Brown")}
               name="cod47"
               value="11"
               checked={data.cod47 === 11}
@@ -770,7 +770,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Black")}
               name="cod47"
               value="12"
               checked={data.cod47 === 12}
@@ -778,7 +778,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod47")}
+              label={t("Others")}
               name="cod47"
               value="13"
               checked={data.cod47 === 13}
@@ -790,7 +790,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod48")} error={errors.cod48}>
           <RadioGroup gridCols="grid-cols-3">
             <RadioGroupItem
-              label={t("cod48")}
+              label={t("Elongate")}
               image="/images/access/forma_fruto_1.png"
               name="cod48"
               value="1"
@@ -799,7 +799,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod48")}
+              label={t("Almost round")}
               image="/images/access/forma_fruto_2.png"
               name="cod48"
               value="2"
@@ -808,7 +808,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod48")}
+              label={t("Triangular")}
               image="/images/access/forma_fruto_3.png"
               name="cod48"
               value="3"
@@ -817,7 +817,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod48")}
+              label={t("Campanulate")}
               image="/images/access/forma_fruto_4.png"
               name="cod48"
               value="4"
@@ -826,7 +826,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod48")}
+              label={t("Block")}
               image="/images/access/forma_fruto_5.png"
               name="cod48"
               value="5"
@@ -835,7 +835,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod48")}
+              label={t("Others")}
               name="cod48"
               value="6"
               checked={data.cod48 === 6}
@@ -901,7 +901,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod54")} error={errors.cod54}>
           <RadioGroup gridCols="grid-cols-5">
             <RadioGroupItem
-              label={t("cod54")}
+              label={t("Acute")}
               image="/images/access/forma_fruto_uniao_pedicelo_1.png"
               name="cod54"
               value="1"
@@ -910,7 +910,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod54")}
+              label={t("Obtuse")}
               image="/images/access/forma_fruto_uniao_pedicelo_2.png"
               name="cod54"
               value="2"
@@ -919,7 +919,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod54")}
+              label={t("Truncate")}
               image="/images/access/forma_fruto_uniao_pedicelo_3.png"
               name="cod54"
               value="3"
@@ -928,7 +928,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod54")}
+              label={t("Cordate")}
               image="/images/access/forma_fruto_uniao_pedicelo_4.png"
               name="cod54"
               value="4"
@@ -937,7 +937,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod54")}
+              label={t("Lobate")}
               image="/images/access/forma_fruto_uniao_pedicelo_5.png"
               name="cod54"
               value="5"
@@ -950,7 +950,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod55")} error={errors.cod55}>
           <RadioGroup gridCols="grid-cols-2">
             <RadioGroupItem
-              label={t("cod55")}
+              label={t("Absent")}
               image="/images/access/colo_base_fruto_1.png"
               name="cod55"
               value="1"
@@ -959,7 +959,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod55")}
+              label={t("Present")}
               image="/images/access/colo_base_fruto_2.png"
               name="cod55"
               value="2"
@@ -972,7 +972,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod56")} error={errors.cod56}>
           <RadioGroup gridCols="grid-cols-5">
             <RadioGroupItem
-              label={t("cod56")}
+              label={t("Pointed")}
               image="/images/access/forma_apice_fruto_1.png"
               name="cod56"
               value="1"
@@ -981,7 +981,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod56")}
+              label={t("Blunt")}
               image="/images/access/forma_apice_fruto_2.png"
               name="cod56"
               value="2"
@@ -990,7 +990,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod56")}
+              label={t("Sunken")}
               image="/images/access/forma_apice_fruto_3.png"
               name="cod56"
               value="3"
@@ -999,7 +999,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod56")}
+              label={t("Sunken and pointed")}
               image="/images/access/forma_apice_fruto_4.png"
               name="cod56"
               value="4"
@@ -1008,7 +1008,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod56")}
+              label={t("Others")}
               name="cod56"
               value="5"
               checked={data.cod56 === 5}
@@ -1020,7 +1020,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod57")} error={errors.cod57}>
           <RadioGroup gridCols="grid-cols-2">
             <RadioGroupItem
-              label={t("cod57")}
+              label={t("Absent")}
               name="cod57"
               value="1"
               checked={data.cod57 === 1}
@@ -1028,7 +1028,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod57")}
+              label={t("Present")}
               name="cod57"
               value="2"
               checked={data.cod57 === 2}
@@ -1040,7 +1040,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod58")} error={errors.cod58}>
           <RadioGroup gridCols="grid-cols-3">
             <RadioGroupItem
-              label={t("cod58")}
+              label={t("Slightly corrugated")}
               image="/images/access/enrugamento_transversal_fruto_1.png"
               name="cod58"
               value="3"
@@ -1049,7 +1049,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod58")}
+              label={t("Corrugated")}
               image="/images/access/enrugamento_transversal_fruto_2.png"
               name="cod58"
               value="5"
@@ -1058,7 +1058,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod58")}
+              label={t("Smooth")}
               image="/images/access/enrugamento_transversal_fruto_3.png"
               name="cod58"
               value="7"
@@ -1082,7 +1082,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod60")} error={errors.cod60}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod60")}
+                label={t("Smooth")}
                 name="cod60"
                 value="1"
                 checked={data.cod60 === 1}
@@ -1090,7 +1090,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod60")}
+                label={t("Semiwrinkled")}
                 name="cod60"
                 value="2"
                 checked={data.cod60 === 2}
@@ -1098,7 +1098,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod60")}
+                label={t("Wrinkled")}
                 name="cod60"
                 value="3"
                 checked={data.cod60 === 3}
@@ -1110,7 +1110,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod63")} error={errors.cod63}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod63")}
+                label={t("< 1/4 fruit length")}
                 name="cod63"
                 value="1"
                 checked={data.cod63 === 1}
@@ -1118,7 +1118,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod63")}
+                label={t("1/4 - 1/2 fruit length")}
                 name="cod63"
                 value="2"
                 checked={data.cod63 === 2}
@@ -1126,7 +1126,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod63")}
+                label={t("1/2 fruit length")}
                 name="cod63"
                 value="3"
                 checked={data.cod63 === 3}
@@ -1140,7 +1140,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod61")} error={errors.cod61}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod61")}
+                label={t("Slight")}
                 name="cod61"
                 value="3"
                 checked={data.cod61 === 3}
@@ -1148,7 +1148,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod61")}
+                label={t("Intermediate")}
                 name="cod61"
                 value="5"
                 checked={data.cod61 === 5}
@@ -1156,7 +1156,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod61")}
+                label={t("Persistent")}
                 name="cod61"
                 value="7"
                 checked={data.cod61 === 7}
@@ -1168,7 +1168,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod62")} error={errors.cod62}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod62")}
+                label={t("Slight")}
                 name="cod62"
                 value="3"
                 checked={data.cod62 === 3}
@@ -1176,7 +1176,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod62")}
+                label={t("Intermediate")}
                 name="cod62"
                 value="5"
                 checked={data.cod62 === 5}
@@ -1184,7 +1184,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod62")}
+                label={t("Persistent")}
                 name="cod62"
                 value="7"
                 checked={data.cod62 === 7}
@@ -1198,7 +1198,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod64")} error={errors.cod64}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod64")}
+                label={t("Light")}
                 name="cod64"
                 value="3"
                 checked={data.cod64 === 3}
@@ -1206,7 +1206,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod64")}
+                label={t("Medium")}
                 name="cod64"
                 value="5"
                 checked={data.cod64 === 5}
@@ -1214,7 +1214,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod64")}
+                label={t("Serious")}
                 name="cod64"
                 value="7"
                 checked={data.cod64 === 7}
@@ -1226,7 +1226,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod65")} error={errors.cod65}>
             <RadioGroup gridCols="grid-cols-4">
               <RadioGroupItem
-                label={t("cod65")}
+                label={t("Dark yellow")}
                 name="cod65"
                 value="1"
                 checked={data.cod65 === 1}
@@ -1234,7 +1234,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod65")}
+                label={t("Brown")}
                 name="cod65"
                 value="2"
                 checked={data.cod65 === 2}
@@ -1242,7 +1242,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod65")}
+                label={t("Black")}
                 name="cod65"
                 value="3"
                 checked={data.cod65 === 3}
@@ -1250,7 +1250,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod65")}
+                label={t("Others")}
                 name="cod65"
                 value="4"
                 checked={data.cod65 === 4}
@@ -1264,7 +1264,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod66")} error={errors.cod66}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod66")}
+                label={t("Smooth")}
                 name="cod66"
                 value="1"
                 checked={data.cod66 === 1}
@@ -1272,7 +1272,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod66")}
+                label={t("Rough")}
                 name="cod66"
                 value="2"
                 checked={data.cod66 === 2}
@@ -1280,7 +1280,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod66")}
+                label={t("Wrinkled")}
                 name="cod66"
                 value="3"
                 checked={data.cod66 === 3}
@@ -1292,7 +1292,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
           <FormField label={t("cod67")} error={errors.cod67}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
-                label={t("cod67")}
+                label={t("Small")}
                 name="cod67"
                 value="3"
                 checked={data.cod67 === 3}
@@ -1300,7 +1300,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod67")}
+                label={t("Intermediate")}
                 name="cod67"
                 value="5"
                 checked={data.cod67 === 5}
@@ -1308,7 +1308,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
               />
 
               <RadioGroupItem
-                label={t("cod67")}
+                label={t("Large")}
                 name="cod67"
                 value="7"
                 checked={data.cod67 === 7}
@@ -1343,7 +1343,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
         <FormField label={t("cod70")} error={errors.cod70}>
           <RadioGroup gridCols="grid-cols-3">
             <RadioGroupItem
-              label={t("cod70")}
+              label={t("< 20")}
               name="cod70"
               value="1"
               checked={data.cod70 === 1}
@@ -1351,7 +1351,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod70")}
+              label={t("20 - 50")}
               name="cod70"
               value="2"
               checked={data.cod70 === 2}
@@ -1359,7 +1359,7 @@ const ReproductivePhase = ({ data, setData, errors }: AccessFormProps) => {
             />
 
             <RadioGroupItem
-              label={t("cod70")}
+              label={t("> 20")}
               name="cod70"
               value="3"
               checked={data.cod70 === 3}

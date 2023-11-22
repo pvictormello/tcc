@@ -1,6 +1,4 @@
-import { useForm } from "@inertiajs/react";
-
-export interface Access {
+export interface IAccess {
   id: number;
   sample: string;
   species: string;
@@ -14,6 +12,94 @@ export interface Access {
   phone: string;
   collection_date: string;
   observation: string;
+}
+
+export interface ISeedlingPhase {
+  access_id: number;
+  cod1: number;
+  cod2: number;
+  cod3: number;
+  cod4: number;
+  cod5: number;
+  cod6: number;
+}
+
+export interface IVegetativePhase {
+  access_id: number;
+  cod7: number;
+  cod8: number;
+  cod9: number;
+  cod10: number;
+  cod11: number;
+  cod12: number;
+  cod13: number;
+  cod14: number;
+  cod15: number;
+  cod16: number;
+  cod17: number;
+  cod18: number;
+  cod19: number;
+  cod20: number;
+  cod21: number;
+  cod22: number;
+  cod23: number;
+  cod24: number;
+  cod25: number;
+}
+
+export interface IReproductivePhase {
+  access_id: number;
+  cod26: number;
+  cod27: number;
+  cod28: number;
+  cod29: number;
+  cod30: number;
+  cod31: number;
+  cod32: number;
+  cod33: number;
+  cod34: number;
+  cod35: number;
+  cod36: number;
+  cod37: number;
+  cod38: number;
+  cod39: number;
+  cod40: number;
+  cod41: number;
+  cod42: number;
+  cod43: number;
+  cod44: number;
+  cod45: number;
+  cod46: number;
+  cod47: number;
+  cod48: number;
+  cod49: number;
+  cod50: number;
+  cod51: number;
+  cod52: number;
+  cod53: number;
+  cod54: number;
+  cod55: number;
+  cod56: number;
+  cod57: number;
+  cod58: number;
+  cod59: number;
+  cod60: number;
+  cod61: number;
+  cod62: number;
+  cod63: number;
+  cod64: number;
+  cod65: number;
+  cod66: number;
+  cod67: number;
+  cod68: number;
+  cod69: number;
+  cod70: number;
+}
+
+export interface IAccessImage {
+  id: number;
+  name: string;
+  access_id: number;
 }
 
 export interface Banner {
@@ -124,7 +210,7 @@ export interface AccessForm {
   cod68: number;
   cod69: number;
   cod70: number;
-  images: any[];
+  images: string[];
 }
 
 export interface AccessFormProps {
