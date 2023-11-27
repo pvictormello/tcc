@@ -1,15 +1,17 @@
 import { Head, Link, useForm } from "@inertiajs/react";
-import { PageProps, User } from "@/types";
+import { IProtectedPageProps, IUser, IUserForm, Role } from "@/types";
 import Layout from "@/Layouts/Layout";
-import { t } from "i18next";
 import { FormEventHandler } from "react";
 import FormField from "@/Components/FormField";
 import Input from "@/Components/Input";
 import Button from "@/Components/Button";
-import Breadcrumbs from "@/Components/Breadcrumbs";
+import RadioGroup, { RadioGroupItem } from "@/Components/RadioGroup";
+import Select from "@/Components/Select";
+import { useTranslation } from "react-i18next";
 
-const Edit = ({ auth, user }: PageProps<{ user: User }>) => {
-  const { data, setData, put, processing, errors } = useForm({
+const Edit = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; parentUsers: IUser[] }>) => {
+  const { t } = useTranslation();
+  const { data, setData, put, processing, errors } = useForm<IUserForm>({
     name: user.name,
     email: user.email,
     password: user.password,
@@ -18,6 +20,9 @@ const Edit = ({ auth, user }: PageProps<{ user: User }>) => {
     state: user.state,
     country: user.country,
     location: user.location,
+    role: user.role,
+    parent: user.parent_id ? (parentUsers.find((parentUser) => parentUser.id === user.parent_id) as IUser) : null,
+    parent_id: user.parent_id,
   });
 
   const submit: FormEventHandler = (e) => {
@@ -27,20 +32,12 @@ const Edit = ({ auth, user }: PageProps<{ user: User }>) => {
   };
 
   return (
-    <Layout user={auth.user} currentLink="home">
+    <Layout user={auth.user} currentLink="users">
       <Head title={t("Edit user")} />
       <div className="pb-16">
         <div className="container mx-auto">
-          <Breadcrumbs
-            previousRoutes={[{ href: route("users.index"), label: t("Users") }]}
-            currentRoute={user.name}
-          />
-
-          <form
-            onSubmit={submit}
-            className="rounded-lg bg-white px-6 py-8 shadow"
-          >
-            <div className="flex border-b border-gray-200 pb-8">
+          <form onSubmit={submit}>
+            <div className="flex overflow-hidden rounded-lg bg-white p-6 shadow">
               <div className="w-1/3">
                 <div className="font-semibold">{t("Informations")}</div>
               </div>
@@ -57,7 +54,7 @@ const Edit = ({ auth, user }: PageProps<{ user: User }>) => {
                 <FormField label={t("Email")} error={errors.email}>
                   <Input
                     type="email"
-                    name="name"
+                    name="email"
                     value={data.email}
                     onChange={(e) => setData("email", e.target.value)}
                     maxLength={100}
@@ -74,17 +71,12 @@ const Edit = ({ auth, user }: PageProps<{ user: User }>) => {
                       maxLength={32}
                     />
                   </FormField>
-                  <FormField
-                    label={t("Confirm password")}
-                    error={errors.password_confirmation}
-                  >
+                  <FormField label={t("Confirm password")} error={errors.password_confirmation}>
                     <Input
                       type="password"
                       name="password_confirmation"
                       value={data.password_confirmation}
-                      onChange={(e) =>
-                        setData("password_confirmation", e.target.value)
-                      }
+                      onChange={(e) => setData("password_confirmation", e.target.value)}
                       maxLength={32}
                     />
                   </FormField>
@@ -129,10 +121,78 @@ const Edit = ({ auth, user }: PageProps<{ user: User }>) => {
                     maxLength={40}
                   />
                 </FormField>
+
+                {auth.user?.role === "Admin" && (
+                  <FormField label={t("Role")} error={errors.location}>
+                    <RadioGroup gridCols="grid-cols-4">
+                      <RadioGroupItem
+                        label={t("Student")}
+                        name="role"
+                        value="Student"
+                        checked={data.role === "Student"}
+                        onChange={(e) =>
+                          setData({ ...data, ...{ parent_id: null, parent: null, role: e.target.value as Role } })
+                        }
+                      />
+
+                      <RadioGroupItem
+                        label={t("Teacher")}
+                        name="role"
+                        value="Teacher"
+                        checked={data.role === "Teacher"}
+                        onChange={(e) =>
+                          setData({ ...data, ...{ parent_id: null, parent: null, role: e.target.value as Role } })
+                        }
+                      />
+
+                      <RadioGroupItem
+                        label={t("Researcher")}
+                        name="role"
+                        value="Researcher"
+                        checked={data.role === "Researcher"}
+                        onChange={(e) =>
+                          setData({ ...data, ...{ parent_id: null, parent: null, role: e.target.value as Role } })
+                        }
+                      />
+
+                      <RadioGroupItem
+                        label={t("Admin")}
+                        name="role"
+                        value="Admin"
+                        checked={data.role === "Admin"}
+                        onChange={(e) =>
+                          setData({ ...data, ...{ parent_id: null, parent: null, role: e.target.value as Role } })
+                        }
+                      />
+                    </RadioGroup>
+                  </FormField>
+                )}
+
+                {auth.user?.role === "Admin" && data.role === "Student" && (
+                  <FormField label={t("Who this student belongs to?")} error={errors.location}>
+                    <Select
+                      label={data.parent?.name || t("Select an option")}
+                      value={data.parent}
+                      onChange={(value) => setData({ ...data, ...{ parent_id: value.id, parent: value } })}
+                    >
+                      {parentUsers
+                        .filter((parentUser) => parentUser.id !== user.id)
+                        .map((parentUser) => (
+                          <Select.Option
+                            key={parentUser.id}
+                            value={parentUser}
+                            selected={parentUser.id === data.parent?.id}
+                          >
+                            {parentUser.name}
+                          </Select.Option>
+                        ))}
+                    </Select>
+                  </FormField>
+                )}
               </div>
             </div>
 
-            <div className="flex justify-end gap-6 pt-8">
+            <div className="mt-8 flex justify-end gap-6 overflow-hidden rounded-lg bg-white px-6 py-4 shadow">
               <Link href={route("users.index")}>
                 <Button size="lg" color="secondary">
                   {t("Cancel")}

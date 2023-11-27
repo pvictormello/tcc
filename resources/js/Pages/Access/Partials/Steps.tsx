@@ -1,5 +1,5 @@
 import { CheckIcon } from "@heroicons/react/24/solid";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { Dispatch, SetStateAction } from "react";
 import { tv } from "tailwind-variants";
 
@@ -10,10 +10,11 @@ const Steps = ({
   currentStep: number;
   setCurrentStep: Dispatch<SetStateAction<number>>;
 }) => {
+  const { t } = useTranslation();
   const listItem = tv({
     base: "relative flex-1",
     variants: {
-      selected: {
+      active: {
         true: "border-b-4 border-blue-600",
       },
     },
@@ -22,47 +23,42 @@ const Steps = ({
   const step = tv({
     base: "flex h-10 w-10 items-center justify-center rounded-full flex-shrink-0",
     variants: {
-      selected: {
-        true: "bg-blue-600 text-white",
-      },
       active: {
         true: "border-2 border-blue-600 font-medium text-blue-600",
       },
       disabled: {
-        true: "border-2 border-gray-300 text-gray-600",
+        true: "border-2 border-slate-300 text-slate-600 group-hover:text-blue-600 group-hover:border-blue-600",
       },
     },
   });
 
   const label = tv({
-    base: "text-left",
+    base: "text-left group-hover:text-blue-600",
     variants: {
       active: {
         true: "text-blue-600",
-      },
-      disabled: {
-        true: "text-gray-600",
       },
     },
   });
 
   return (
-    <ol className="flex w-full bg-white rounded-lg shadow">
-      <li className={listItem({ selected: currentStep >= 1 })}>
-        <button onClick={() => setCurrentStep(1)} className="flex items-center gap-4 w-full h-full px-6 py-4 text-sm">
+    <ol className="flex w-full rounded-lg bg-white shadow">
+      <li className={listItem({ active: currentStep === 1 })}>
+        <button
+          onClick={() => setCurrentStep(1)}
+          className="group flex h-full w-full items-center gap-4 px-6 py-4 text-sm"
+        >
           <div
             className={step({
-              selected: currentStep > 1,
               active: currentStep === 1,
-              disabled: currentStep < 1,
+              disabled: currentStep !== 1,
             })}
           >
-            {currentStep > 1 ? <CheckIcon className="h-4 w-4" /> : <div>01</div>}
+            <div>01</div>
           </div>
           <div
             className={label({
               active: currentStep === 1,
-              disabled: currentStep < 1,
             })}
           >
             <div className="font-medium">{t("Collection location")}</div>
@@ -70,24 +66,22 @@ const Steps = ({
         </button>
       </li>
 
-      <li className={listItem({ selected: currentStep >= 2 })}>
+      <li className={listItem({ active: currentStep === 2 })}>
         <button
           onClick={() => setCurrentStep(2)}
-          className="flex items-center gap-4 w-full h-full py-4 pl-8 pr-6 text-sm"
+          className="group flex h-full w-full items-center gap-4 py-4 pl-8 pr-6 text-sm"
         >
           <div
             className={step({
-              selected: currentStep > 2,
               active: currentStep === 2,
-              disabled: currentStep < 2,
+              disabled: currentStep !== 2,
             })}
           >
-            {currentStep > 2 ? <CheckIcon className="h-4 w-4" /> : <div>02</div>}
+            <div>02</div>
           </div>
           <div
             className={label({
               active: currentStep === 2,
-              disabled: currentStep < 2,
             })}
           >
             <div className="font-medium">{t("Seedling phase")}</div>
@@ -95,30 +89,28 @@ const Steps = ({
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
-          <svg className="h-full w-full text-gray-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
+          <svg className="h-full w-full text-slate-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
             <path d="M0.5 0V31L10.5 41L0.5 51V82" stroke="currentcolor" vector-effect="non-scaling-stroke"></path>
           </svg>
         </div>
       </li>
 
-      <li className={listItem({ selected: currentStep >= 3 })}>
+      <li className={listItem({ active: currentStep === 3 })}>
         <button
           onClick={() => setCurrentStep(3)}
-          className="flex items-center gap-4 w-full h-full py-4 pl-8 pr-6 text-sm"
+          className="group flex h-full w-full items-center gap-4 py-4 pl-8 pr-6 text-sm"
         >
           <div
             className={step({
-              selected: currentStep > 3,
               active: currentStep === 3,
-              disabled: currentStep < 3,
+              disabled: currentStep !== 3,
             })}
           >
-            {currentStep > 3 ? <CheckIcon className="h-4 w-4" /> : <div>03</div>}
+            <div>03</div>
           </div>
           <div
             className={label({
               active: currentStep === 3,
-              disabled: currentStep < 3,
             })}
           >
             <div className="font-medium">{t("Vegetative phase")}</div>
@@ -126,30 +118,28 @@ const Steps = ({
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
-          <svg className="h-full w-full text-gray-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
+          <svg className="h-full w-full text-slate-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
             <path d="M0.5 0V31L10.5 41L0.5 51V82" stroke="currentcolor" vector-effect="non-scaling-stroke"></path>
           </svg>
         </div>
       </li>
 
-      <li className={listItem({ selected: currentStep >= 4 })}>
+      <li className={listItem({ active: currentStep === 4 })}>
         <button
           onClick={() => setCurrentStep(4)}
-          className="flex items-center gap-4 w-full h-full py-4 pl-8 pr-6 text-sm"
+          className="group flex h-full w-full items-center gap-4 py-4 pl-8 pr-6 text-sm"
         >
           <div
             className={step({
-              selected: currentStep > 4,
               active: currentStep === 4,
-              disabled: currentStep < 4,
+              disabled: currentStep !== 4,
             })}
           >
-            {currentStep > 4 ? <CheckIcon className="h-4 w-4" /> : <div>04</div>}
+            <div>04</div>
           </div>
           <div
             className={label({
               active: currentStep === 4,
-              disabled: currentStep < 4,
             })}
           >
             <div className="font-medium">{t("Reproductive phase")}</div>
@@ -157,37 +147,35 @@ const Steps = ({
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
-          <svg className="h-full w-full text-gray-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
+          <svg className="h-full w-full text-slate-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
             <path d="M0.5 0V31L10.5 41L0.5 51V82" stroke="currentcolor" vector-effect="non-scaling-stroke"></path>
           </svg>
         </div>
       </li>
 
-      <li className={listItem({ selected: currentStep >= 5 })}>
+      <li className={listItem({ active: currentStep === 5 })}>
         <button
           onClick={() => setCurrentStep(5)}
-          className="flex items-center gap-4 w-full h-full py-4 pl-8 pr-6 text-sm"
+          className="group flex h-full w-full items-center gap-4 py-4 pl-8 pr-6 text-sm"
         >
           <div
             className={step({
-              selected: currentStep > 5,
               active: currentStep === 5,
-              disabled: currentStep < 5,
+              disabled: currentStep !== 5,
             })}
           >
-            {currentStep > 5 ? <CheckIcon className="h-4 w-4" /> : <div>05</div>}
+            <div>05</div>
           </div>
           <div
             className={label({
               active: currentStep === 5,
-              disabled: currentStep < 5,
             })}
           >
             <div className="font-medium">{t("Images")}</div>
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
-          <svg className="h-full w-full text-gray-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
+          <svg className="h-full w-full text-slate-200" viewBox="0 0 12 82" fill="none" preserveAspectRatio="none">
             <path d="M0.5 0V31L10.5 41L0.5 51V82" stroke="currentcolor" vector-effect="non-scaling-stroke"></path>
           </svg>
         </div>

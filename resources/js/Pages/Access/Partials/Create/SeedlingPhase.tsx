@@ -1,12 +1,13 @@
 import FormField from "@/Components/FormField";
 import Input from "@/Components/Input";
 import RadioGroup, { RadioGroupItem } from "@/Components/RadioGroup";
-import { AccessFormProps } from "@/types";
-import { t } from "i18next";
+import { IAccessFormProps } from "@/types";
+import { useTranslation } from "react-i18next";
 
-const SeedlingPhase = ({ data, setData, errors }: AccessFormProps) => {
+const SeedlingPhase = ({ data, setData, errors }: IAccessFormProps) => {
+  const { t } = useTranslation();
   return (
-    <div className="flex border-b border-gray-200 pb-8">
+    <div className="mt-8 flex overflow-hidden rounded-lg bg-white p-6 shadow">
       <div className="w-1/3">
         <div className="font-semibold">{t("Seedling phase")}</div>
       </div>

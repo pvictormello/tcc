@@ -4,22 +4,64 @@ namespace App\Http\Controllers;
 
 use App\Models\Access;
 use App\Models\AccessImage;
+use App\Models\Log;
 use App\Models\ReproductivePhase;
 use App\Models\SeedlingPhase;
 use App\Models\VegetativePhase;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class AccessController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $access = Access::all();
+        $user = Auth::user();
+        $role = $user->role;
 
-        return Inertia::render('Access/Index', ['access' => $access]);
+        $sort = $request->get('sort', 'id');
+        $order = $request->get('order', 'asc');
+
+        $filters = $request->only(['sample', 'species', 'variety', 'color', 'location', 'created_by']);
+
+        $access = Access::orderBy($sort, $order)
+            ->select(['id', 'sample', 'species', 'variety', 'color', 'location', 'public', 'owner_id', 'created_by_id'])
+            ->with('created_by')->with('owner')
+            ->when(isset($filters['created_by']), function ($query) use ($filters) {
+                $query->whereHas('created_by', function ($subQuery) use ($filters) {
+                    $subQuery->where('name', 'like', "%{$filters['created_by']}%");
+                });
+            })
+            ->when($role === "Student", function ($query) use ($user) {
+                return $query->where('owner_id', $user->id);
+            })
+            ->when($role === "Teacher" || $role === "Researcher", function ($query) use ($user) {
+                return $query->where('owner_id', $user->id)->orWhere('public', 1);
+            })
+            ->when(isset($filters['sample']), function ($query) use ($filters) {
+                return $query->where('sample', 'like', "%{$filters['sample']}%");
+            })
+            ->when(isset($filters['species']), function ($query) use ($filters) {
+                return $query->where('species', 'like', "%{$filters['species']}%");
+            })
+            ->when(isset($filters['variety']), function ($query) use ($filters) {
+                return $query->where('variety', 'like', "%{$filters['variety']}%");
+            })
+            ->when(isset($filters['color']), function ($query) use ($filters) {
+                return $query->where('color', 'like', "%{$filters['color']}%");
+            })
+            ->when(isset($filters['location']), function ($query) use ($filters) {
+                return $query->where('location', 'like', "%{$filters['location']}%");
+            })
+            ->paginate(15);
+
+        return Inertia::render('Access/Index', [
+            'access' => $access,
+            'currentSort' => $sort,
+            'currentOrder' => $order,
+            'currentFilters' => $filters,
+        ]);
     }
 
     public function create()
@@ -33,6 +75,8 @@ class AccessController extends Controller
             'sample' => 'required',
         ]);
 
+        $user = Auth::user();
+
         $access = Access::create([
             'sample' => $request->sample,
             'species' => $request->species,
@@ -45,6 +89,9 @@ class AccessController extends Controller
             'phone' => $request->phone,
             'collection_date' => $request->collection_date,
             'observation' => $request->observation,
+            'created_by_id' => $user->id,
+            'owner_id' => is_null($user->parent_id) ? $user->id : $user->parent_id,
+            'public' => 0,
         ]);
 
         SeedlingPhase::create([
@@ -135,7 +182,47 @@ class AccessController extends Controller
             ]);
         }
 
+        Log::create([
+            'user_id' => Auth::id(),
+            'action_type' => 'access.store',
+            'description' => "Criou um novo acesso com id {$access->id}.",
+        ]);
+
         return Redirect::route('access.index');
+    }
+
+    public function show($id)
+    {
+        $access = Access::find($id);
+        $seedling_phase = SeedlingPhase::find($id);
+        $vegetative_phase = VegetativePhase::find($id);
+        $reproductive_phase = ReproductivePhase::find($id);
+        $images = AccessImage::where('access_id', $id)->get();
+
+        return Inertia::render('Access/Show', [
+            'access' => $access,
+            'seedlingPhase' => $seedling_phase,
+            'vegetativePhase' => $vegetative_phase,
+            'reproductivePhase' => $reproductive_phase,
+            'images' => $images
+        ]);
+    }
+
+    public function show_json($id)
+    {
+        $access = Access::find($id);
+        $seedling_phase = SeedlingPhase::find($id);
+        $vegetative_phase = VegetativePhase::find($id);
+        $reproductive_phase = ReproductivePhase::find($id);
+        $images = AccessImage::where('access_id', $id)->get();
+
+        return response()->json([
+            'access' => $access,
+            'seedlingPhase' => $seedling_phase,
+            'vegetativePhase' => $vegetative_phase,
+            'reproductivePhase' => $reproductive_phase,
+            'images' => $images
+        ]);
     }
 
     public function edit($id)
@@ -267,6 +354,12 @@ class AccessController extends Controller
             }
         }
 
+        Log::create([
+            'user_id' => Auth::id(),
+            'action_type' => 'access.update',
+            'description' => "Atualizou um acesso com id {$access->id}.",
+        ]);
+
         return Redirect::route('access.index');
     }
 
@@ -286,6 +379,11 @@ class AccessController extends Controller
         $access = Access::find($id);
         $access->delete();
 
+        Log::create([
+            'user_id' => Auth::id(),
+            'action_type' => 'access.destroy',
+            'description' => "Deletou um acesso com id {$id}.",
+        ]);
 
         return Redirect::route('access.index');
     }
@@ -302,6 +400,12 @@ class AccessController extends Controller
 
         $response = array("image" => $image_name);
 
+        Log::create([
+            'user_id' => Auth::id(),
+            'action_type' => 'access.store_image',
+            'description' => "Fez o upload de uma imagem com nome {$image_name}.",
+        ]);
+
         return json_encode($response);
     }
 
@@ -309,5 +413,27 @@ class AccessController extends Controller
     {
         AccessImage::where('name', $request->image)->delete();
         unlink(public_path() . '/images/uploads/' . $request->image);
+
+        Log::create([
+            'user_id' => Auth::id(),
+            'action_type' => 'access.destroy_image',
+            'description' => "Deletou uma imagem com nome {$request->image}.",
+        ]);
+    }
+
+    public function update_visibility($id)
+    {
+        $access = Access::find($id);
+        $access->update([
+            'public' => $access->public === 0 ? 1 : 0,
+        ]);
+
+        Log::create([
+            'user_id' => Auth::id(),
+            'action_type' => 'access.update_visibility',
+            'description' => $access->public === 0 ? "Tornou privado um acesso com id {$id}." : "Tornou público um acesso com id {$id}.",
+        ]);
+
+        return Redirect::route('access.index');
     }
 }

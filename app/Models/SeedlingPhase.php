@@ -25,9 +25,4 @@ class SeedlingPhase extends Model
         'cod5',
         'cod6',
     ];
-
-    public function vegetative_phase(): HasOne
-    {
-        return $this->hasOne(VegetativePhase::class, 'access_id', 'access_id');
-    }
 }

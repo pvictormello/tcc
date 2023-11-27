@@ -1,24 +1,24 @@
 import { Head, Link, useForm } from "@inertiajs/react";
 import {
   IAccess,
-  AccessForm,
+  IAccessForm,
   IAccessImage,
-  PageProps,
+  IPageProps,
   IReproductivePhase,
   ISeedlingPhase,
   IVegetativePhase,
 } from "@/types";
 import Layout from "@/Layouts/Layout";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { FormEventHandler, useState } from "react";
 import Button from "@/Components/Button";
-import Breadcrumbs from "@/Components/Breadcrumbs";
-import Access from "./Partials/Access";
+
+import Access from "./Partials/Create/Access";
 import Steps from "./Partials/Steps";
-import SeedlingPhase from "./Partials/SeedlingPhase";
-import VegetativePhase from "./Partials/VegetativePhase";
-import ReproductivePhase from "./Partials/ReproductivePhase";
-import AccessImages from "./Partials/AccessImages";
+import SeedlingPhase from "./Partials/Create/SeedlingPhase";
+import VegetativePhase from "./Partials/Create/VegetativePhase";
+import ReproductivePhase from "./Partials/Create/ReproductivePhase";
+import AccessImages from "./Partials/Create/AccessImages";
 
 const Create = ({
   auth,
@@ -27,16 +27,17 @@ const Create = ({
   vegetativePhase,
   reproductivePhase,
   images,
-}: PageProps<{
+}: IPageProps<{
   access: IAccess;
   seedlingPhase: ISeedlingPhase;
   vegetativePhase: IVegetativePhase;
   reproductivePhase: IReproductivePhase;
   images: IAccessImage[];
 }>) => {
+  const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState(1);
 
-  const { data, setData, put, processing, errors } = useForm<AccessForm>({
+  const { data, setData, put, processing, errors } = useForm<IAccessForm>({
     sample: access.sample,
     species: access.species,
     variety: access.variety,
@@ -129,24 +130,19 @@ const Create = ({
 
   return (
     <Layout user={auth.user} currentLink="access">
-      <Head title={t("New access")} />
+      <Head title={t("Edit access")} />
       <div className="pb-16">
         <div className="container mx-auto">
-          <Breadcrumbs
-            previousRoutes={[{ href: route("access.index"), label: t("Access") }]}
-            currentRoute={t("New access")}
-          />
-
           <Steps currentStep={currentStep} setCurrentStep={setCurrentStep} />
 
-          <form onSubmit={submit} className="mt-8 rounded-lg bg-white px-6 py-8 shadow">
+          <form onSubmit={submit}>
             {currentStep === 1 && <Access data={data} setData={setData} errors={errors} />}
             {currentStep === 2 && <SeedlingPhase data={data} setData={setData} errors={errors} />}
             {currentStep === 3 && <VegetativePhase data={data} setData={setData} errors={errors} />}
             {currentStep === 4 && <ReproductivePhase data={data} setData={setData} errors={errors} />}
             {currentStep === 5 && <AccessImages data={data} setData={setData} errors={errors} />}
 
-            <div className="flex justify-end gap-6 pt-8">
+            <div className="mt-8 flex justify-end gap-6 overflow-hidden rounded-lg bg-white px-6 py-4 shadow">
               {currentStep === 1 && (
                 <Link href={route("access.index")}>
                   <Button size="lg" color="secondary">

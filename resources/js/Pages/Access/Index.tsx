@@ -1,32 +1,141 @@
 import { useState } from "react";
 import { Head, Link, router } from "@inertiajs/react";
-import { IAccess, PageProps } from "@/types";
+import {
+  IAccess,
+  IAccessImage,
+  IPaginatedData,
+  IProtectedPageProps,
+  IReproductivePhase,
+  ISeedlingPhase,
+  IVegetativePhase,
+} from "@/types";
 import Layout from "@/Layouts/Layout";
-import { t } from "i18next";
-import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
-import Breadcrumbs from "@/Components/Breadcrumbs";
+import { useTranslation } from "react-i18next";
+
 import Button from "@/Components/Button";
 import ButtonGroup, { ButtonGroupItem } from "@/Components/ButtonGroup";
 import Modal from "@/Components/Modal";
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import {
+  ExclamationTriangleIcon,
+  FolderPlusIcon,
+  XCircleIcon,
+  EyeIcon,
+  EyeSlashIcon,
+  MagnifyingGlassIcon,
+  PencilSquareIcon,
+  TrashIcon,
+  ArrowDownTrayIcon,
+} from "@heroicons/react/24/outline";
+import { FunnelIcon, PlusIcon, ChevronDownIcon, ChevronUpDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import Input from "@/Components/Input";
+import Pagination from "@/Components/Pagination";
+import { pdf } from "@react-pdf/renderer";
+import Report from "./Report";
+import axios from "axios";
+import { saveAs } from "file-saver";
 
-const Index = ({ auth, access }: PageProps<{ access: IAccess[] }>) => {
+const Index = ({
+  auth,
+  access,
+  currentSort,
+  currentOrder,
+  currentFilters,
+}: IProtectedPageProps<{
+  access: IPaginatedData<IAccess[]>;
+  currentSort: string;
+  currentOrder: "asc" | "desc" | "";
+  currentFilters: { [key: string]: string };
+}>) => {
+  const { t } = useTranslation();
+  const [filters, setFilters] = useState(currentFilters);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [accessToDelete, setAccessToDelete] = useState<number | null>(null);
+  const [selectedAccessId, setSelectedAccessId] = useState<number | null>(null);
 
-  const openModal = (id: number) => {
-    setAccessToDelete(id);
+  const handleFilterChange = (e: any) => {
+    const { name, value } = e.target;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [name]: value ? value : null,
+    }));
+  };
+
+  const handleApplyFilters = () => {
+    router.get(route("access.index", { ...currentFilters, ...filters }));
+  };
+
+  const handleResetFilters = () => {
+    router.get(route("access.index"));
+  };
+
+  const handleSort = (sort: string) => {
+    let order = "asc";
+
+    if (sort === currentSort) {
+      order = currentOrder === "asc" ? "desc" : "";
+    }
+
+    const sortParams = order ? { sort, order } : {};
+
+    router.get(route("access.index", sortParams));
+  };
+
+  const renderSortIcon = (sort: string) => {
+    if (sort === currentSort) {
+      return currentOrder === "asc" ? <ChevronUpIcon className="h-6 w-6" /> : <ChevronDownIcon className="h-6 w-6" />;
+    }
+
+    return <ChevronUpDownIcon className="h-6 w-6" />;
+  };
+
+  const handleDelete = (id: number) => {
+    setSelectedAccessId(id);
     setShowDeleteModal(true);
   };
 
-  const closeModal = () => {
-    setAccessToDelete(null);
+  const handleConfirmDelete = () => {
+    router.delete(route("access.delete", { id: selectedAccessId }));
     setShowDeleteModal(false);
+    setSelectedAccessId(null);
   };
 
-  const deleteAccess = () => {
-    router.delete(`/acessos/${accessToDelete}`);
-    closeModal();
+  const handleCancelDelete = () => {
+    setShowDeleteModal(false);
+    setSelectedAccessId(null);
+  };
+
+  const handleReport = async (id: number) => {
+    axios.get(`/acessos/${id}/json`).then(async (res) => {
+      const blob = await pdf(
+        <Report
+          access={res.data.access}
+          seedlingPhase={res.data.seedlingPhase}
+          vegetativePhase={res.data.vegetativePhase}
+          reproductivePhase={res.data.reproductivePhase}
+          images={res.data.images}
+        />,
+      ).toBlob();
+      saveAs(blob, `${t("Access report")}_${res.data.access.sample}_${Date.now()}.pdf`);
+    });
+  };
+
+  const handleVisibility = (id: number) => {
+    router.put(route("access.update_visibility", { id }));
+  };
+
+  const renderVisibilityButton = (access: IAccess): boolean => {
+    if (auth.user.role === "Student" && access.created_by.id === auth.user.id) {
+      return true;
+    }
+
+    if ((auth.user.role === "Teacher" || auth.user.role === "Researcher") && access.owner.id === auth.user.id) {
+      return true;
+    }
+
+    if (auth.user.role === "Admin") {
+      return true;
+    }
+
+    return false;
   };
 
   return (
@@ -35,93 +144,249 @@ const Index = ({ auth, access }: PageProps<{ access: IAccess[] }>) => {
 
       <div className="pb-16">
         <div className="container mx-auto">
-          <Breadcrumbs currentRoute={t("Access")} />
+          <div className="rounded-lg bg-white px-6 py-4 shadow">
+            <div className="sm:flex sm:items-center sm:justify-between">
+              <div className="text-lg font-semibold">{t("Access")}</div>
 
-          <div className="rounded-lg bg-white p-6 shadow">
-            <div className="flex items-center justify-between">
-              <div className="text-xl font-semibold">{t("Access")}</div>
+              <div className="mt-4 flex items-center gap-4 sm:mt-0 sm:gap-6">
+                <Button color="secondary">{t("Download report")}</Button>
 
-              <Link href={route("access.create")}>
-                <Button>{t("Add access")}</Button>
-              </Link>
+                <Link href={route("access.create")}>
+                  <Button>{t("Add access")}</Button>
+                </Link>
+              </div>
             </div>
+          </div>
 
-            <div className="mt-8">
-              {access.length === 0 && (
-                <div className="w-full rounded-md bg-red-50 p-4 text-sm font-medium text-red-800">
-                  {t("No access found")}
+          <div className="mt-8 overflow-hidden rounded-lg bg-white shadow">
+            {access.total === 0 && Object.values(filters).every((value) => value === "") ? (
+              <div className="flex flex-col items-center px-6 py-12">
+                <FolderPlusIcon className="h-12 w-12 text-slate-600" />
+                <div className="mt-4 text-sm font-medium">{t("No access found")}</div>
+                <div className="text-sm text-slate-600">{t("Create a new access")}</div>
+                <div className="mt-4">
+                  <Link href={route("access.create")}>
+                    <Button size="sm">{t("Add access")}</Button>
+                  </Link>
                 </div>
-              )}
-              {access.length > 0 && (
+              </div>
+            ) : (
+              <>
                 <table className="w-full">
-                  <thead className="border-b-2 border-gray-200 text-left text-sm font-semibold">
+                  <thead className="border-b-2 border-slate-200 bg-white text-left text-xs font-medium uppercase tracking-wide text-slate-400">
                     <tr>
-                      <th className="py-4 pr-3">{t("Sample")}</th>
-                      <th className="px-3 py-4">{t("Species and variety")}</th>
-                      <th className="px-3 py-4">{t("Color")}</th>
-                      <th className="px-3 py-4">{t("Generation")}</th>
-                      <th className="px-3 py-4">{t("Producer name")}</th>
-                      <th className="px-3 py-4">{t("Location")}</th>
-                      <th className="px-3 py-4">{t("Collection date")}</th>
-                      <th className="py-4 pl-3">{t("Actions")}</th>
+                      <th>
+                        <button
+                          type="button"
+                          onClick={() => handleSort("sample")}
+                          className="flex w-full items-center justify-between px-6 py-4 uppercase"
+                        >
+                          <div>{t("Sample")}</div>
+                          {renderSortIcon("sample")}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          type="button"
+                          onClick={() => handleSort("species")}
+                          className="flex w-full items-center justify-between px-6 py-4 uppercase"
+                        >
+                          <div>{t("Species")}</div>
+                          {renderSortIcon("species")}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          type="button"
+                          onClick={() => handleSort("variety")}
+                          className="flex w-full items-center justify-between px-6 py-4 uppercase"
+                        >
+                          <div>{t("Variety")}</div>
+                          {renderSortIcon("variety")}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          type="button"
+                          onClick={() => handleSort("color")}
+                          className="flex w-full items-center justify-between px-6 py-4 uppercase"
+                        >
+                          <div>{t("Color")}</div>
+                          {renderSortIcon("color")}
+                        </button>
+                      </th>
+                      <th>
+                        <button
+                          type="button"
+                          onClick={() => handleSort("location")}
+                          className="flex w-full items-center justify-between px-6 py-4 uppercase"
+                        >
+                          <div>{t("Location")}</div>
+                          {renderSortIcon("location")}
+                        </button>
+                      </th>
+                      <th className="px-6 py-4">{t("Created by")}</th>
+                      <th className="px-6 py-4 text-right">{t("Actions")}</th>
                     </tr>
                   </thead>
                   <tbody className="text-sm">
-                    {access.map((access) => (
-                      <tr className="border-t border-gray-200" key={access.id}>
-                        <td className="py-4 pr-3 font-medium">{access.sample}</td>
-                        <td className="px-3 py-4 text-gray-500">
-                          <div>{access.species}</div>
-                          <div>{access.variety}</div>
-                        </td>
-                        <td className="px-3 py-4 text-gray-500">{access.color}</td>
-                        <td className="px-3 py-4 text-gray-500">{access.generation}</td>
-                        <td className="px-3 py-4 text-gray-500">{access.producer_name}</td>
-                        <td className="px-3 py-4 text-gray-500">{access.location}</td>
-                        <td className="px-3 py-4 text-gray-500">{access.collection_date}</td>
-                        <td className="py-4 pl-3">
+                    <tr className="border-t border-slate-200 bg-slate-50">
+                      <td className="px-6 py-4">
+                        <Input
+                          inputSize="sm"
+                          name="sample"
+                          value={filters.sample || ""}
+                          onChange={handleFilterChange}
+                          placeholder={t("Filter by sample")}
+                        />
+                      </td>
+                      <td className="px-6 py-4">
+                        <Input
+                          inputSize="sm"
+                          name="species"
+                          value={filters.species || ""}
+                          onChange={handleFilterChange}
+                          placeholder={t("Filter by species")}
+                        />
+                      </td>
+                      <td className="px-6 py-4">
+                        <Input
+                          inputSize="sm"
+                          name="variety"
+                          value={filters.variety || ""}
+                          onChange={handleFilterChange}
+                          placeholder={t("Filter by variety")}
+                        />
+                      </td>
+                      <td className="px-6 py-4">
+                        <Input
+                          inputSize="sm"
+                          name="color"
+                          value={filters.color || ""}
+                          onChange={handleFilterChange}
+                          placeholder={t("Filter by color")}
+                        />
+                      </td>
+                      <td className="px-6 py-4">
+                        <Input
+                          inputSize="sm"
+                          name="location"
+                          value={filters.location || ""}
+                          onChange={handleFilterChange}
+                          placeholder={t("Filter by location")}
+                        />
+                      </td>
+                      <td className="px-6 py-4">
+                        <Input
+                          inputSize="sm"
+                          name="created_by"
+                          value={filters.created_by || ""}
+                          onChange={handleFilterChange}
+                          placeholder={t("Filter by created by")}
+                        />
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex justify-end gap-4">
                           <ButtonGroup>
-                            <Link href={route("access.edit", access.id)}>
-                              <ButtonGroupItem label={t("Edit")}>
-                                <PencilSquareIcon className="h-5 w-5 text-blue-600" />
-                              </ButtonGroupItem>
-                            </Link>
-
-                            <ButtonGroupItem label={t("Delete")} onClick={() => openModal(access.id)}>
-                              <TrashIcon className="h-5 w-5 text-blue-600" />
+                            <ButtonGroupItem label={t("Clean filters")} onClick={handleResetFilters}>
+                              <XCircleIcon className="h-5 w-5 text-slate-900" />
+                            </ButtonGroupItem>
+                            <ButtonGroupItem onClick={handleApplyFilters}>
+                              <div className="mr-2">{t("Filter")}</div>
+                              <FunnelIcon className="h-4 w-4 text-slate-900" />
                             </ButtonGroupItem>
                           </ButtonGroup>
+                        </div>
+                      </td>
+                    </tr>
+                    {access.data.map((access) => (
+                      <tr className="border-t border-slate-200 bg-white" key={access.id}>
+                        <td className="px-6 py-4 font-medium">{access.sample}</td>
+                        <td className="px-6 py-4 text-slate-500">{access.species}</td>
+                        <td className="px-6 py-4 text-slate-500">{access.variety}</td>
+                        <td className="px-6 py-4 text-slate-500">{access.color}</td>
+                        <td className="px-6 py-4 text-slate-500">{access.location}</td>
+                        <td className="px-6 py-4 text-slate-500">{access.created_by.name}</td>
+                        <td className="px-4 py-4">
+                          {renderVisibilityButton(access) && (
+                            <ButtonGroup>
+                              <Link href={route("access.show", access.id)}>
+                                <ButtonGroupItem label={t("View")}>
+                                  <MagnifyingGlassIcon className="h-5 w-5 text-blue-600" />
+                                </ButtonGroupItem>
+                              </Link>
+
+                              <Link href={route("access.edit", access.id)}>
+                                <ButtonGroupItem label={t("Edit")}>
+                                  <PencilSquareIcon className="h-5 w-5 text-blue-600" />
+                                </ButtonGroupItem>
+                              </Link>
+
+                              <ButtonGroupItem label={t("Delete")} onClick={() => handleDelete(access.id)}>
+                                <TrashIcon className="h-5 w-5 text-blue-600" />
+                              </ButtonGroupItem>
+
+                              <ButtonGroupItem label={t("Download report")} onClick={() => handleReport(access.id)}>
+                                <ArrowDownTrayIcon className="h-5 w-5 text-blue-600" />
+                              </ButtonGroupItem>
+
+                              {auth.user.role !== "Student" && (
+                                <ButtonGroupItem
+                                  label={access.public ? t("Make private") : t("Make public")}
+                                  onClick={() => handleVisibility(access.id)}
+                                >
+                                  {access.public ? (
+                                    <EyeIcon className="h-5 w-5 text-blue-600" />
+                                  ) : (
+                                    <EyeSlashIcon className="h-5 w-5 text-blue-600" />
+                                  )}
+                                </ButtonGroupItem>
+                              )}
+                            </ButtonGroup>
+                          )}
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
-              )}
-            </div>
+
+                <Pagination
+                  from={access.from}
+                  to={access.to}
+                  total={access.total}
+                  current_page={access.current_page}
+                  last_page={access.last_page}
+                  first_page_url={access.first_page_url}
+                  prev_page_url={access.prev_page_url}
+                  next_page_url={access.next_page_url}
+                  last_page_url={access.last_page_url}
+                />
+              </>
+            )}
           </div>
         </div>
       </div>
 
-      <Modal show={showDeleteModal} onClose={closeModal} maxWidth="lg">
+      <Modal show={showDeleteModal} onClose={handleCancelDelete} maxWidth="lg">
         <div className="p-6">
           <div className="flex gap-4">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-red-50 flex-shrink-0">
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-50">
               <ExclamationTriangleIcon className="h-6 w-6 text-red-600" />
             </div>
 
             <div className="flex flex-col gap-2">
               <h2 className="font-semibold">{t("Delete access")}</h2>
 
-              <p className="text-gray-600">{t("Are you sure you want to delete this access?")}</p>
+              <p className="text-slate-600">{t("Are you sure you want to delete this access?")}</p>
             </div>
           </div>
 
           <div className="mt-6 flex justify-end gap-4">
-            <Button color="white" onClick={closeModal}>
+            <Button color="white" onClick={handleCancelDelete}>
               {t("Cancel")}
             </Button>
 
-            <Button color="danger" onClick={deleteAccess}>
+            <Button color="danger" onClick={handleConfirmDelete}>
               {t("Delete")}
             </Button>
           </div>

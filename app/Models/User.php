@@ -21,7 +21,7 @@ class User extends Authenticatable
         'state',
         'password',
         'location',
-        'role_id',
+        'role',
         'parent_id',
     ];
 

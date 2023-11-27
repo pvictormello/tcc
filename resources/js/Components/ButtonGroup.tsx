@@ -5,14 +5,14 @@ export const ButtonGroupItem = ({
   label,
   children,
   ...props
-}: ButtonHTMLAttributes<HTMLButtonElement> & { label: string }) => {
+}: ButtonHTMLAttributes<HTMLButtonElement> & { label?: string }) => {
   const [showPopover, setShowPopover] = useState(false);
 
   return (
-    <div className="relative">
+    <div className="flex items-center justify-center">
       <button
         {...props}
-        className="flex items-center justify-center px-2 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+        className="flex items-center justify-center px-2 py-2 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
         type={type}
         onMouseOver={() => setShowPopover(true)}
         onMouseLeave={() => setShowPopover(false)}
@@ -20,11 +20,9 @@ export const ButtonGroupItem = ({
         {children}
       </button>
 
-      {showPopover && (
-        <div className="absolute inset-x-0 -top-8 flex justify-center">
-          <div className="bg-white ring-1 ring-gray-200 px-2 rounded-lg shadow text-sm font-medium">
-            {label}
-          </div>
+      {showPopover && label && (
+        <div className="absolute mb-16 flex w-32 items-center justify-center">
+          <div className="rounded-lg bg-white px-2 text-sm font-medium shadow ring-1 ring-slate-200/40">{label}</div>
         </div>
       )}
     </div>
@@ -33,7 +31,7 @@ export const ButtonGroupItem = ({
 
 const ButtonGroup = ({ children }: PropsWithChildren) => {
   return (
-    <div className="inline-flex items-center rounded-lg ring-1 ring-gray-200 divide-x divide-gray-200">
+    <div className="inline-flex items-center divide-x divide-slate-200 rounded-lg bg-white shadow-sm ring-1 ring-slate-200">
       {children}
     </div>
   );

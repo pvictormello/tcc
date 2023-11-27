@@ -1,12 +1,13 @@
 import FormField from "@/Components/FormField";
 import Input from "@/Components/Input";
 import Textarea from "@/Components/Textarea";
-import { AccessFormProps } from "@/types";
-import { t } from "i18next";
+import { IAccessFormProps } from "@/types";
+import { useTranslation } from "react-i18next";
 
-const Access = ({ data, setData, errors }: AccessFormProps) => {
+const Access = ({ data, setData, errors }: IAccessFormProps) => {
+  const { t } = useTranslation();
   return (
-    <div className="flex border-b border-gray-200 pb-8">
+    <div className="mt-8 flex overflow-hidden rounded-lg bg-white p-6 shadow">
       <div className="w-1/3">
         <div className="font-semibold">{t("Collection location")}</div>
       </div>
@@ -56,7 +57,6 @@ const Access = ({ data, setData, errors }: AccessFormProps) => {
             value={data.producer_name}
             onChange={(e) => setData("producer_name", e.target.value)}
             maxLength={50}
-            className="rounded-md border px-3 py-2 ring-1 ring-inset ring-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
         </FormField>
 
@@ -67,7 +67,6 @@ const Access = ({ data, setData, errors }: AccessFormProps) => {
               value={data.coordinates}
               onChange={(e) => setData("coordinates", e.target.value)}
               maxLength={30}
-              className="rounded-md border px-3 py-2 ring-1 ring-inset ring-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </FormField>
 
@@ -77,7 +76,6 @@ const Access = ({ data, setData, errors }: AccessFormProps) => {
               value={data.location}
               onChange={(e) => setData("location", e.target.value)}
               maxLength={50}
-              className="rounded-md border px-3 py-2 ring-1 ring-inset ring-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </FormField>
         </div>
@@ -90,7 +88,6 @@ const Access = ({ data, setData, errors }: AccessFormProps) => {
               value={data.phone}
               onChange={(e) => setData("phone", e.target.value)}
               maxLength={20}
-              className="rounded-md border px-3 py-2 ring-1 ring-inset ring-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </FormField>
 
@@ -101,7 +98,6 @@ const Access = ({ data, setData, errors }: AccessFormProps) => {
               value={data.collection_date}
               onChange={(e) => setData("collection_date", e.target.value)}
               maxLength={11}
-              className="rounded-md border px-3 py-2 ring-1 ring-inset ring-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
           </FormField>
         </div>
