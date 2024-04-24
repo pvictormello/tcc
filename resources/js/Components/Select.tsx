@@ -1,4 +1,4 @@
-import { Listbox, ListboxProps } from "@headlessui/react";
+import { Listbox } from "@headlessui/react";
 import { ChevronUpDownIcon } from "@heroicons/react/24/solid";
 import { PropsWithChildren } from "react";
 import { tv } from "tailwind-variants";

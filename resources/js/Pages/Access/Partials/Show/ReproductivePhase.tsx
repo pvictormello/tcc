@@ -6,11 +6,11 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
   const { t } = useTranslation();
 
   return (
-    <div className="mt-8 flex overflow-hidden rounded-lg bg-white p-6 shadow">
-      <div className="w-1/3">
+    <div className="mt-8 flex flex-col gap-8 overflow-hidden rounded-lg bg-white p-6 shadow md:flex-row md:gap-0">
+      <div className="w-full md:w-1/3">
         <div className="font-semibold">{t("Reproductive phase")}</div>
       </div>
-      <div className="flex w-2/3 flex-col gap-8">
+      <div className="flex w-full flex-col gap-6 md:w-2/3 md:gap-8">
         <FormField label={t("cod26")}>
           <div>{reproductivePhase.cod26 ?? "-"}</div>
         </FormField>
@@ -92,7 +92,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           {reproductivePhase.cod30 === null && <div>-</div>}
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod31")}>
             {reproductivePhase.cod31 === 1 && <div>{t("Rotate")}</div>}
 
@@ -148,7 +148,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           {reproductivePhase.cod35 === null && <div>-</div>}
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod34")}>
             <div>{reproductivePhase.cod34 ?? "-"}</div>
           </FormField>
@@ -158,7 +158,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           </FormField>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-3 gap-6">
           <FormField label={t("cod37")}>
             {reproductivePhase.cod37 === 3 && <div>{t("Inserted")}</div>}
 
@@ -231,7 +231,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           {reproductivePhase.cod41 === null && <div>-</div>}
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod42")}>
             <div>{reproductivePhase.cod42 ?? "-"}</div>
           </FormField>
@@ -241,7 +241,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod43")}>
             {reproductivePhase.cod43 === 1 && <div>{t("Absent")}</div>}
 
@@ -350,7 +350,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           {reproductivePhase.cod48 === null && <div>-</div>}
         </FormField>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-3 gap-6">
           <FormField label={t("cod49")}>
             <div>{reproductivePhase.cod49 ?? "-"}</div>
           </FormField>
@@ -364,7 +364,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod52")}>
             <div>{reproductivePhase.cod52 ?? "-"}</div>
           </FormField>
@@ -502,7 +502,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           <div>{reproductivePhase.cod59 ?? "-"}</div>
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod60")}>
             {reproductivePhase.cod60 === 1 && <div>{t("Smooth")}</div>}
 
@@ -524,7 +524,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod61")}>
             {reproductivePhase.cod61 === 3 && <div>{t("Slight")}</div>}
 
@@ -546,7 +546,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod64")}>
             {reproductivePhase.cod64 === 3 && <div>{t("Light")}</div>}
 
@@ -570,7 +570,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod66")}>
             {reproductivePhase.cod66 === 1 && <div>{t("Smooth")}</div>}
 
@@ -592,7 +592,7 @@ const ReproductivePhase = ({ reproductivePhase }: { reproductivePhase: IReproduc
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod68")}>
             <div>{reproductivePhase.cod68 ?? "-"}</div>
           </FormField>

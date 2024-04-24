@@ -102,10 +102,10 @@ const Index = ({
       <div className="pb-16">
         <div className="container mx-auto">
           <div className="rounded-lg bg-white px-4 py-4 shadow sm:px-6">
-            <div className="sm:flex sm:items-center sm:justify-between">
+            <div className="flex items-center justify-between flex-wrap gap-6">
               <div className="text-lg font-semibold">{t("Users")}</div>
 
-              <div className="mt-4 flex items-center gap-4 sm:mt-0 sm:gap-6">
+              <div className="mt-0 flex items-center gap-6">
                 <Button color="secondary">
                   <PDFDownloadLink
                     document={<ReportAll users={users.data} />}
@@ -136,7 +136,7 @@ const Index = ({
               </div>
             ) : (
               <>
-                <table className="block w-full overflow-x-scroll sm:table">
+                <table className="block w-full overflow-x-scroll xl:table">
                   <thead className="border-b-2 border-slate-200 bg-white text-left text-xs font-medium uppercase tracking-wide text-slate-400">
                     <tr>
                       <th className="min-w-[200px]">

@@ -6,12 +6,12 @@ const VegetativePhase = ({ vegetativePhase }: { vegetativePhase: IVegetativePhas
   const { t } = useTranslation();
 
   return (
-    <div className="mt-8 flex overflow-hidden rounded-lg bg-white p-6 shadow">
-      <div className="w-1/3">
+    <div className="mt-8 flex flex-col gap-8 overflow-hidden rounded-lg bg-white p-6 shadow md:flex-row md:gap-0">
+      <div className="w-full md:w-1/3">
         <div className="font-semibold">{t("Vegetative phase")}</div>
       </div>
-      <div className="flex w-2/3 flex-col gap-8">
-        <div className="grid grid-cols-2 gap-6">
+      <div className="flex w-full flex-col gap-6 md:w-2/3 md:gap-8">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod7")}>
             {vegetativePhase.cod7 === 1 && <div>{t("Annual")}</div>}
 
@@ -35,7 +35,7 @@ const VegetativePhase = ({ vegetativePhase }: { vegetativePhase: IVegetativePhas
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod9")}>
             {vegetativePhase.cod9 === 1 && <div>{t("Green")}</div>}
 
@@ -84,7 +84,7 @@ const VegetativePhase = ({ vegetativePhase }: { vegetativePhase: IVegetativePhas
           {vegetativePhase.cod11 === null && <div>-</div>}
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod12")}>
             {vegetativePhase.cod12 === 1 && <div>{t("< 25")}</div>}
 
@@ -112,7 +112,7 @@ const VegetativePhase = ({ vegetativePhase }: { vegetativePhase: IVegetativePhas
           </FormField>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-3 gap-6">
           <FormField label={t("cod14")}>
             <div>{vegetativePhase.cod14 ?? "-"}</div>
           </FormField>
@@ -151,7 +151,7 @@ const VegetativePhase = ({ vegetativePhase }: { vegetativePhase: IVegetativePhas
           {vegetativePhase.cod17 === null && <div>-</div>}
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod18")}>
             {vegetativePhase.cod18 === 3 && <div>{t("Sparse")}</div>}
 
@@ -253,7 +253,7 @@ const VegetativePhase = ({ vegetativePhase }: { vegetativePhase: IVegetativePhas
           {vegetativePhase.cod23 === null && <div>-</div>}
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod24")}>
             <div>{vegetativePhase.cod24 ?? "-"}</div>
           </FormField>

@@ -11,7 +11,7 @@ const About = ({ auth }: IPageProps) => {
       <Head title={t("About")} />
 
       <div className="container mx-auto pb-16">
-        <div className="mx-auto w-2/3">
+        <div className="mx-auto w-full lg:w-2/3">
           <div className="rounded-lg bg-white p-6 shadow">
             <div className="text-xl font-semibold">Sobre o Banco De Germoplasma de Capsicum</div>
 

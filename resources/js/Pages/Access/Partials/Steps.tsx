@@ -21,7 +21,7 @@ const Steps = ({
   });
 
   const step = tv({
-    base: "flex h-10 w-10 items-center justify-center rounded-full flex-shrink-0",
+    base: "flex h-8 w-8 sm:h-12 sm:w-12 lg:h-10 lg:w-10 items-center justify-center rounded-full flex-shrink-0",
     variants: {
       active: {
         true: "border-2 border-blue-600 font-medium text-blue-600",
@@ -33,7 +33,7 @@ const Steps = ({
   });
 
   const label = tv({
-    base: "text-left group-hover:text-blue-600",
+    base: "text-left group-hover:text-blue-600 hidden lg:block",
     variants: {
       active: {
         true: "text-blue-600",
@@ -46,7 +46,7 @@ const Steps = ({
       <li className={listItem({ active: currentStep === 1 })}>
         <button
           onClick={() => setCurrentStep(1)}
-          className="group flex h-full w-full items-center gap-4 px-6 py-4 text-sm"
+          className="group justify-center lg:justify-start flex h-full w-full items-center gap-4 p-4 sm:px-6 sm:py-4 text-sm"
         >
           <div
             className={step({
@@ -69,7 +69,7 @@ const Steps = ({
       <li className={listItem({ active: currentStep === 2 })}>
         <button
           onClick={() => setCurrentStep(2)}
-          className="group flex h-full w-full items-center gap-4 py-4 pl-8 pr-6 text-sm"
+          className="group justify-center lg:justify-start flex h-full w-full items-center gap-4 p-4 sm:py-4 sm:pl-8 sm:pr-6 text-sm"
         >
           <div
             className={step({
@@ -85,7 +85,7 @@ const Steps = ({
             })}
           >
             <div className="font-medium">{t("Seedling phase")}</div>
-            <div>{t("Morphological characteristics")}</div>
+            <div className="hidden xl:block">{t("Morphological characteristics")}</div>
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
@@ -98,7 +98,7 @@ const Steps = ({
       <li className={listItem({ active: currentStep === 3 })}>
         <button
           onClick={() => setCurrentStep(3)}
-          className="group flex h-full w-full items-center gap-4 py-4 pl-8 pr-6 text-sm"
+          className="group justify-center lg:justify-start flex h-full w-full items-center gap-4 p-4 sm:py-4 sm:pl-8 sm:pr-6 text-sm"
         >
           <div
             className={step({
@@ -114,7 +114,7 @@ const Steps = ({
             })}
           >
             <div className="font-medium">{t("Vegetative phase")}</div>
-            <div>{t("Morphological characteristics")}</div>
+            <div className="hidden xl:block">{t("Morphological characteristics")}</div>
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
@@ -127,7 +127,7 @@ const Steps = ({
       <li className={listItem({ active: currentStep === 4 })}>
         <button
           onClick={() => setCurrentStep(4)}
-          className="group flex h-full w-full items-center gap-4 py-4 pl-8 pr-6 text-sm"
+          className="group justify-center lg:justify-start flex h-full w-full items-center gap-4 p-4 sm:py-4 sm:pl-8 sm:pr-6 text-sm"
         >
           <div
             className={step({
@@ -143,7 +143,7 @@ const Steps = ({
             })}
           >
             <div className="font-medium">{t("Reproductive phase")}</div>
-            <div>{t("Morphological characteristics")}</div>
+            <div className="hidden xl:block">{t("Morphological characteristics")}</div>
           </div>
         </button>
         <div className="absolute inset-0 left-0 top-0 w-3">
@@ -156,7 +156,7 @@ const Steps = ({
       <li className={listItem({ active: currentStep === 5 })}>
         <button
           onClick={() => setCurrentStep(5)}
-          className="group flex h-full w-full items-center gap-4 py-4 pl-8 pr-6 text-sm"
+          className="group justify-center lg:justify-start flex h-full w-full items-center gap-4 p-4 sm:py-4 sm:pl-8 sm:pr-6 text-sm"
         >
           <div
             className={step({

@@ -14,11 +14,11 @@ const Show = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
       <div className="pb-16">
         <div className="container mx-auto">
           <div className="rounded-lg bg-white p-6 shadow">
-            <div className="flex">
-              <div className="w-1/3">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-0">
+              <div className="w-full md:w-1/3">
                 <div className="font-semibold">{t("Informations")}</div>
               </div>
-              <div className="flex w-2/3 flex-col gap-8">
+              <div className="flex w-full md:w-2/3 flex-col gap-6 md:gap-8">
                 <FormField label={t("Full name")}>
                   <div>{user.name ?? "-"}</div>
                 </FormField>
@@ -27,7 +27,7 @@ const Show = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
                   <div>{user.email ?? "-"}</div>
                 </FormField>
 
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-3 gap-6">
                   <FormField label={t("City")}>
                     <div>{user.city ?? "-"}</div>
                   </FormField>

@@ -7,16 +7,16 @@ const Access = ({ access }: { access: IAccess }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="mt-8 flex overflow-hidden rounded-lg bg-white p-6 shadow">
-      <div className="w-1/3">
+    <div className="mt-8 flex flex-col gap-8 overflow-hidden rounded-lg bg-white p-6 shadow md:flex-row md:gap-0">
+      <div className="w-full md:w-1/3">
         <div className="font-semibold">{t("Collection location")}</div>
       </div>
-      <div className="flex w-2/3 flex-col gap-8">
+      <div className="flex w-full flex-col gap-6 md:w-2/3 md:gap-8">
         <FormField label={t("Sample")}>
           <div>{access.sample ?? "-"}</div>
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("Species")}>
             <div>{access.species ?? "-"}</div>
           </FormField>
@@ -26,7 +26,7 @@ const Access = ({ access }: { access: IAccess }) => {
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("Color")}>
             <div>{access.color ?? "-"}</div>
           </FormField>
@@ -40,7 +40,7 @@ const Access = ({ access }: { access: IAccess }) => {
           <div>{access.producer_name ?? "-"}</div>
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("Geodetic coordinates")}>
             <div>{access.coordinates ?? "-"}</div>
           </FormField>
@@ -50,7 +50,7 @@ const Access = ({ access }: { access: IAccess }) => {
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("Contact phone")}>
             <div>{access.phone ?? "-"}</div>
           </FormField>

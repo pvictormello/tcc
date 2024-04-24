@@ -6,13 +6,13 @@ const SeedlingPhase = ({ seedlingPhase }: { seedlingPhase: ISeedlingPhase }) => 
   const { t } = useTranslation();
 
   return (
-    <div className="mt-8 flex overflow-hidden rounded-lg bg-white p-6 shadow">
-      <div className="w-1/3">
+    <div className="mt-8 flex flex-col gap-8 overflow-hidden rounded-lg bg-white p-6 shadow md:flex-row md:gap-0">
+      <div className="w-full md:w-1/3">
         <div className="font-semibold">{t("Seedling phase")}</div>
       </div>
 
-      <div className="flex w-2/3 flex-col gap-8">
-        <div className="grid grid-cols-2 gap-6">
+      <div className="flex w-full flex-col gap-6 md:w-2/3 md:gap-8">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod1")}>
             {seedlingPhase.cod1 === 1 && <div>{t("White")}</div>}
             {seedlingPhase.cod1 === 2 && <div>{t("Green")}</div>}
@@ -73,7 +73,7 @@ const SeedlingPhase = ({ seedlingPhase }: { seedlingPhase: ISeedlingPhase }) => 
           {seedlingPhase.cod4 === null && <div>-</div>}
         </FormField>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           <FormField label={t("cod5")}>
             <div>{seedlingPhase.cod5 ?? "-"}</div>
           </FormField>

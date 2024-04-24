@@ -242,6 +242,16 @@ export interface IUserForm {
   parent_id: number | null;
 }
 
+export interface IContactForm {
+  name: string;
+  email: string;
+  cpf: string | null;
+  phone: string | null;
+  address: string | null;
+  institution: string | null;
+  message: string;
+}
+
 export type IPageProps<T extends Record<string, unknown> = Record<string, unknown>> = T & {
   auth: {
     user?: IUser;

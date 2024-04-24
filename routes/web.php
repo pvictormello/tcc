@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AccessController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -27,10 +29,9 @@ Route::get('/sobre', function () {
 Route::get('/contato', function () {
     return Inertia::render('Contact');
 })->name('contact.index');
+Route::post('/contato', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/teste', function () {
-    return Inertia::render('Access/Teste');
-})->name('teste.index');
+Route::post('/localizacao', [LocalizationController::class, 'store'])->name('localization.store');
 
 
 Route::middleware('auth', 'role:Student,Teacher,Researcher')->group(function () {

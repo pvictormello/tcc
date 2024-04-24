@@ -9,7 +9,7 @@ const Button = ({
   children,
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
-  size?: "sm" | "md" | "lg" | "full";
+  size?: "sm" | "md" | "lg" | "full" | "square";
   color?: "primary" | "secondary" | "white" | "danger";
 }) => {
   const button = tv({
@@ -26,6 +26,7 @@ const Button = ({
         md: "px-4 py-2 text-sm sm:text-base",
         lg: "px-12 py-2",
         full: "px-4 py-2 w-full",
+        square: "px-2 py-2 text-sm",
       },
     },
     defaultVariants: {

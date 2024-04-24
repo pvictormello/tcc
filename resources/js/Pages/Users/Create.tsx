@@ -38,11 +38,11 @@ const Create = ({ auth, parentUsers }: IProtectedPageProps<{ parentUsers: IUser[
       <div className="pb-16">
         <div className="container mx-auto">
           <form onSubmit={submit}>
-            <div className="flex overflow-hidden rounded-lg bg-white p-6 shadow">
-              <div className="w-1/3">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-0 overflow-hidden rounded-lg bg-white p-6 shadow">
+              <div className="w-full md:w-1/3">
                 <div className="font-semibold">{t("Informations")}</div>
               </div>
-              <div className="flex w-2/3 flex-col gap-12">
+              <div className="flex w-full md:w-2/3 flex-col gap-6 md:gap-12">
                 <FormField label={t("Full name")} error={errors.name}>
                   <Input
                     name="name"
@@ -62,7 +62,7 @@ const Create = ({ auth, parentUsers }: IProtectedPageProps<{ parentUsers: IUser[
                   />
                 </FormField>
 
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-2 gap-6">
                   <FormField label={t("Password")} error={errors.password}>
                     <Input
                       type="password"
@@ -83,7 +83,7 @@ const Create = ({ auth, parentUsers }: IProtectedPageProps<{ parentUsers: IUser[
                   </FormField>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-3 gap-6">
                   <FormField label={t("City")} error={errors.city}>
                     <Input
                       type="text"

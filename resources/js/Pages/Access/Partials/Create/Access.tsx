@@ -7,16 +7,16 @@ import { useTranslation } from "react-i18next";
 const Access = ({ data, setData, errors }: IAccessFormProps) => {
   const { t } = useTranslation();
   return (
-    <div className="mt-8 flex overflow-hidden rounded-lg bg-white p-6 shadow">
-      <div className="w-1/3">
+    <div className="mt-8 flex flex-col gap-8 overflow-hidden rounded-lg bg-white p-6 shadow md:flex-row md:gap-0">
+      <div className="w-full md:w-1/3">
         <div className="font-semibold">{t("Collection location")}</div>
       </div>
-      <div className="flex w-2/3 flex-col gap-12">
+      <div className="flex w-full flex-col gap-6 md:w-2/3 md:gap-12">
         <FormField label={t("Sample")} error={errors.sample}>
           <Input name="sample" value={data.sample} onChange={(e) => setData("sample", e.target.value)} maxLength={20} />
         </FormField>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-12">
           <FormField label={t("Species")} error={errors.species}>
             <Input
               name="species"
@@ -36,7 +36,7 @@ const Access = ({ data, setData, errors }: IAccessFormProps) => {
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-12">
           <FormField label={t("Color")} error={errors.color}>
             <Input name="color" value={data.color} onChange={(e) => setData("color", e.target.value)} maxLength={30} />
           </FormField>
@@ -60,7 +60,7 @@ const Access = ({ data, setData, errors }: IAccessFormProps) => {
           />
         </FormField>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-12">
           <FormField label={t("Geodetic coordinates")} error={errors.coordinates}>
             <Input
               name="coordinates"
@@ -80,7 +80,7 @@ const Access = ({ data, setData, errors }: IAccessFormProps) => {
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-12">
           <FormField label={t("Contact phone")} error={errors.phone}>
             <Input
               type="tel"

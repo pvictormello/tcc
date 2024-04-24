@@ -7,12 +7,12 @@ import { useTranslation } from "react-i18next";
 const VegetativePhase = ({ data, setData, errors }: IAccessFormProps) => {
   const { t } = useTranslation();
   return (
-    <div className="mt-8 flex overflow-hidden rounded-lg bg-white p-6 shadow">
-      <div className="w-1/3">
+    <div className="mt-8 flex flex-col gap-8 overflow-hidden rounded-lg bg-white p-6 shadow md:flex-row md:gap-0">
+      <div className="w-full md:w-1/3">
         <div className="font-semibold">{t("Vegetative phase")}</div>
       </div>
-      <div className="flex w-2/3 flex-col gap-12">
-        <div className="grid grid-cols-2 gap-12">
+      <div className="flex w-full flex-col gap-6 md:w-2/3 md:gap-12">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <FormField label={t("cod7")} error={errors.cod7}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
@@ -78,7 +78,7 @@ const VegetativePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </FormField>
         </div>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <FormField label={t("cod9")} error={errors.cod9}>
             <RadioGroup gridCols="grid-cols-4">
               <RadioGroupItem
@@ -175,7 +175,7 @@ const VegetativePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </RadioGroup>
         </FormField>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <FormField label={t("cod12")} error={errors.cod12}>
             <RadioGroup gridCols="grid-cols-5">
               <RadioGroupItem
@@ -320,7 +320,7 @@ const VegetativePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </RadioGroup>
         </FormField>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <FormField label={t("cod18")} error={errors.cod18}>
             <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
@@ -536,7 +536,7 @@ const VegetativePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </RadioGroup>
         </FormField>
 
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
           <FormField label={t("cod24")} error={errors.cod24}>
             <Input
               type="number"

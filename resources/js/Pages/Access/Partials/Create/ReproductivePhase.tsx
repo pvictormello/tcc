@@ -8,11 +8,11 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
   const { t } = useTranslation();
   return (
     <div className="mt-8 flex overflow-hidden rounded-lg bg-white p-6 shadow">
-      <div className="flex">
-        <div className="w-1/3">
+      <div className="flex flex-col gap-8 md:flex-row md:gap-0">
+        <div className="w-full md:w-1/3">
           <div className="font-semibold">{t("Reproductive phase")}</div>
         </div>
-        <div className="flex w-2/3 flex-col gap-12">
+        <div className="flex w-full flex-col gap-6 md:w-2/3 md:gap-12">
           <FormField label={t("cod26")} error={errors.cod26}>
             <Input
               type="number"
@@ -24,7 +24,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </FormField>
 
           <FormField label={t("cod27")} error={errors.cod27}>
-            <RadioGroup gridCols="grid-cols-5">
+            <RadioGroup gridCols="grid-cols-2 md:grid-cols-5">
               <RadioGroupItem
                 label={t("One")}
                 name="cod27"
@@ -99,7 +99,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </FormField>
 
           <FormField label={t("cod29")} error={errors.cod29}>
-            <RadioGroup gridCols="grid-cols-9">
+            <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
                 label={t("White")}
                 name="cod29"
@@ -175,7 +175,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </FormField>
 
           <FormField label={t("cod30")} error={errors.cod30}>
-            <RadioGroup gridCols="grid-cols-6">
+            <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
                 label={t("White")}
                 name="cod30"
@@ -226,7 +226,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </RadioGroup>
           </FormField>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod31")} error={errors.cod31}>
               <RadioGroup gridCols="grid-cols-3">
                 <RadioGroupItem
@@ -285,7 +285,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </div>
 
           <FormField label={t("cod33")} error={errors.cod33}>
-            <RadioGroup gridCols="grid-cols-6">
+            <RadioGroup gridCols="grid-cols-3">
               <RadioGroupItem
                 label={t("White")}
                 name="cod33"
@@ -337,7 +337,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </FormField>
 
           <FormField label={t("cod35")} error={errors.cod35}>
-            <RadioGroup gridCols="grid-cols-7">
+            <RadioGroup gridCols="grid-cols-4">
               <RadioGroupItem
                 label={t("White")}
                 name="cod35"
@@ -396,7 +396,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </RadioGroup>
           </FormField>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod34")} error={errors.cod34}>
               <Input
                 type="number"
@@ -418,9 +418,9 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </FormField>
           </div>
 
-          <div className="grid grid-cols-3 gap-12">
+          <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
             <FormField label={t("cod37")} error={errors.cod37}>
-              <RadioGroup gridCols="grid-cols-3">
+              <RadioGroup gridCols="grid-cols-1">
                 <RadioGroupItem
                   label={t("Inserted")}
                   name="cod37"
@@ -448,7 +448,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </FormField>
 
             <FormField label={t("cod38")} error={errors.cod38}>
-              <RadioGroup gridCols="grid-cols-2">
+              <RadioGroup gridCols="grid-cols-1">
                 <RadioGroupItem
                   label={t("Absent")}
                   name="cod38"
@@ -468,7 +468,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </FormField>
 
             <FormField label={t("cod39")} error={errors.cod39}>
-              <RadioGroup gridCols="grid-cols-2">
+              <RadioGroup gridCols="grid-cols-1">
                 <RadioGroupItem
                   label={t("Absent")}
                   name="cod39"
@@ -549,7 +549,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </RadioGroup>
           </FormField>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod42")} error={errors.cod42}>
               <Input
                 type="number"
@@ -571,7 +571,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </FormField>
           </div>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod43")} error={errors.cod43}>
               <RadioGroup gridCols="grid-cols-2">
                 <RadioGroupItem
@@ -622,7 +622,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </div>
 
           <FormField label={t("cod44")} error={errors.cod44}>
-            <RadioGroup gridCols="grid-cols-7">
+            <RadioGroup gridCols="grid-cols-4">
               <RadioGroupItem
                 label={t("White")}
                 name="cod44"
@@ -682,7 +682,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </FormField>
 
           <FormField label={t("cod47")} error={errors.cod47}>
-            <RadioGroup gridCols="grid-cols-7">
+            <RadioGroup gridCols="grid-cols-4">
               <RadioGroupItem
                 label={t("White")}
                 name="cod47"
@@ -846,7 +846,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </RadioGroup>
           </FormField>
 
-          <div className="grid grid-cols-3 gap-12">
+          <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
             <FormField label={t("cod49")} error={errors.cod49}>
               <Input
                 type="number"
@@ -878,7 +878,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </FormField>
           </div>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod52")} error={errors.cod52}>
               <Input
                 type="number"
@@ -1080,7 +1080,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             />
           </FormField>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod60")} error={errors.cod60}>
               <RadioGroup gridCols="grid-cols-3">
                 <RadioGroupItem
@@ -1138,7 +1138,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </FormField>
           </div>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod61")} error={errors.cod61}>
               <RadioGroup gridCols="grid-cols-3">
                 <RadioGroupItem
@@ -1196,7 +1196,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </FormField>
           </div>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod64")} error={errors.cod64}>
               <RadioGroup gridCols="grid-cols-3">
                 <RadioGroupItem
@@ -1262,7 +1262,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </FormField>
           </div>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod66")} error={errors.cod66}>
               <RadioGroup gridCols="grid-cols-3">
                 <RadioGroupItem
@@ -1320,7 +1320,7 @@ const ReproductivePhase = ({ data, setData, errors }: IAccessFormProps) => {
             </FormField>
           </div>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <FormField label={t("cod68")} error={errors.cod68}>
               <Input
                 type="number"

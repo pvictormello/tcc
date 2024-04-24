@@ -41,8 +41,8 @@ const AccessImages = ({ data, setData }: IAccessFormProps) => {
   };
 
   return (
-    <div className="inline-flex w-full gap-12">
-      <div className="mx-auto mt-8 w-1/3 overflow-hidden rounded-lg bg-white p-6 shadow h-full">
+    <div className="inline-flex flex-col lg:flex-row w-full gap-0 lg:gap-12">
+      <div className="mx-auto mt-8 h-full w-full lg:w-1/2 xl:w-1/3 overflow-hidden rounded-lg bg-white p-6 shadow">
         <div className="flex flex-col gap-6">
           <div className="flex h-40 w-full flex-col items-center justify-center gap-4 rounded-lg border-4 border-dashed border-slate-200">
             <PhotoIcon className="h-12 w-12 text-slate-300" />
@@ -63,7 +63,7 @@ const AccessImages = ({ data, setData }: IAccessFormProps) => {
       </div>
 
       {data.images.length > 0 && (
-        <div className="mt-8 w-2/3 overflow-hidden rounded-lg bg-white shadow h-full">
+        <div className="mt-8 h-full w-full lg:w-1/2 xl:w-2/3 overflow-hidden rounded-lg bg-white shadow">
           <table className="w-full">
             <thead className="border-b-2 border-slate-200 bg-white text-left text-xs font-medium uppercase tracking-wide text-slate-400">
               <tr>

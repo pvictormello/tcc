@@ -81,7 +81,7 @@ const Index = ({
               </div>
             ) : (
               <>
-                <table className="block w-full overflow-x-scroll sm:table">
+                <table className="block w-full overflow-x-scroll xl:table">
                   <thead className="border-b-2 border-slate-200 bg-white text-left text-xs font-medium uppercase tracking-wide text-slate-400">
                     <tr>
                       <th className="min-w-[200px]">
