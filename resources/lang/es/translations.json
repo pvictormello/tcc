@@ -286,5 +286,8 @@
   "Report": "Informe",
   "Report generated in:": "Informe generado en:",
   "User report": "Informe de usuario",
-  "Access report": "Informe de acesso"
+  "Access report": "Informe de acesso",
+  "About1": "La Universidad Federal de Uberlândia, campus Monte Carmelo, estableció en el año 2013 el Banco de Germoplasma de <i>Capsicum</i> (BG <i>Capsicum</i> UFU), con el objetivo de conservar, preservar, documentar y mantener el intercambio de germoplasma del género <i>Capsicum</i>. Los recursos genéticos almacenados provienen de recolección o donación, y son caracterizados en cuanto a aspectos morfológicos y moleculares. Actualmente, el BG <i>Capsicum</i> UFU cuenta con más de 250 accesos registrados y caracterizados.",
+  "About2": "Los accesos se caracterizan según el <i>International Plant Genetic Resources Institute - Descriptors for Capsicum</i> (IPGRI, 1995) utilizando un programa de computadora llamado BG <i>Capsicum</i> UFU, desarrollado en el lenguaje JSP (<i>JavaServer Pages</i>) con almacenamiento de información en el SGBD MariaDB. El sistema se implementó como resultado de la iniciación científica del estudiante Valdomiro Caetano Martins, guiado por los profesores Ana Cláudia Martinez y Thiago Pirola Ribeiro de FACOM en colaboración con el profesor Gabriel Mascarenhas Maciel de ICIAG.",
+  "About3": "La Universidad Federal de Uberlândia, en calidad de mantenedora del BG <i>Capsicum</i> UFU, se reserva el derecho de intercambiar recursos genéticos de su colección con instituciones de investigación públicas o privadas. Para ello, los interesados deben ponerse en contacto con el curador del BG <i>Capsicum</i> UFU, el Prof. Gabriel Mascarenhas Maciel, a través del correo electrónico: <strong>gabrielmaciel@iciag.ufu.br</strong>."
 }

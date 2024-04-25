@@ -1,9 +1,10 @@
-import { Head } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import { IProtectedPageProps, IUser } from "@/types";
 import Layout from "@/Layouts/Layout";
 import FormField from "@/Components/FormField";
 
 import { useTranslation } from "react-i18next";
+import Button from "@/Components/Button";
 
 const Show = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; parentUsers: IUser[] }>) => {
   const { t } = useTranslation();
@@ -14,11 +15,11 @@ const Show = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
       <div className="pb-16">
         <div className="container mx-auto">
           <div className="rounded-lg bg-white p-6 shadow">
-            <div className="flex flex-col md:flex-row gap-8 md:gap-0">
+            <div className="flex flex-col gap-8 md:flex-row md:gap-0">
               <div className="w-full md:w-1/3">
                 <div className="font-semibold">{t("Informations")}</div>
               </div>
-              <div className="flex w-full md:w-2/3 flex-col gap-6 md:gap-8">
+              <div className="flex w-full flex-col gap-6 md:w-2/3 md:gap-8">
                 <FormField label={t("Full name")}>
                   <div>{user.name ?? "-"}</div>
                 </FormField>
@@ -27,7 +28,7 @@ const Show = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
                   <div>{user.email ?? "-"}</div>
                 </FormField>
 
-                <div className="grid sm:grid-cols-3 gap-6">
+                <div className="grid gap-6 sm:grid-cols-3">
                   <FormField label={t("City")}>
                     <div>{user.city ?? "-"}</div>
                   </FormField>
@@ -56,6 +57,12 @@ const Show = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
                 )}
               </div>
             </div>
+          </div>
+
+          <div className="mt-8 flex justify-end gap-6 overflow-hidden rounded-lg bg-white px-6 py-4 shadow">
+            <Link href={route("users.index")}>
+              <Button size="lg">{t("Voltar")}</Button>
+            </Link>
           </div>
         </div>
       </div>
