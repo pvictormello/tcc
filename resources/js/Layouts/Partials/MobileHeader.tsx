@@ -78,7 +78,7 @@ const MobileHeader = ({
 
   return (
     <div className="flex items-center justify-between py-5">
-      <h1 className="z-30 text-base italic">
+      <h1 className="z-40 text-base italic">
         <span className="text-xl font-semibold not-italic">BG</span>
         Capsicum
       </h1>
@@ -150,15 +150,15 @@ const MobileHeader = ({
         <Popover>
           {({ open }) => (
             <>
-              <Popover.Button className="relative z-30">
+              <Popover.Button className="relative z-40">
                 <Button size="square">
                   {open ? <ChevronUpIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
                 </Button>
               </Popover.Button>
 
-              <Popover.Overlay className="fixed inset-0 z-20 bg-blue-400/30 backdrop-blur" />
+              <Popover.Overlay className="fixed inset-0 z-30 bg-blue-400/30 backdrop-blur" />
 
-              <Popover.Panel className="absolute inset-x-0 top-0 z-20 origin-top rounded-b-lg bg-blue-600 pt-24 shadow-2xl shadow-gray-900/20">
+              <Popover.Panel className="absolute inset-x-0 top-0 z-30 origin-top rounded-b-lg bg-blue-600 pt-24 shadow-2xl shadow-gray-900/20">
                 <nav className="container mx-auto pb-6">
                   <ul className="flex flex-col gap-4 font-medium">
                     {routes.map((route) => {
