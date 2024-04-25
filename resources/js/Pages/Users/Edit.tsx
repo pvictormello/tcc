@@ -124,7 +124,7 @@ const Edit = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
 
                 {auth.user?.role === "Admin" && (
                   <FormField label={t("Role")} error={errors.location}>
-                    <RadioGroup gridCols="grid-cols-4">
+                    <RadioGroup gridCols="grid-cols-2 md:grid-cols-4">
                       <RadioGroupItem
                         label={t("Student")}
                         name="role"

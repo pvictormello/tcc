@@ -85,7 +85,7 @@ const Index = ({
   };
 
   const handleConfirmDelete = () => {
-    router.delete(route("users.delete", { id: selectedUserId }));
+    router.delete(route("users.destroy", { id: selectedUserId }));
     setShowDeleteModal(false);
     setSelectedUserId(null);
   };

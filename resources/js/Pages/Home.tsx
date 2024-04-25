@@ -45,7 +45,7 @@ const Home = ({ auth, banners }: IPageProps<{ banners: IBanner[] }>) => {
               <div className="h-full w-full bg-gradient-to-l from-black via-transparent to-black"></div>
             </div>
 
-            <div className="absolute inset-0 z-10 flex items-center justify-between px-12">
+            <div className="absolute inset-0 z-20 flex items-center justify-between px-12">
               <button onClick={previousBanner}>
                 <ArrowLeftCircleIcon className="h-10 w-10 text-white" />
               </button>
