@@ -18,7 +18,16 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `users` (`id`, `name`, `email`, `city`, `country`, `state`, `password`, `location`, `role`, `parent_id`) VALUES
-	(1, 'Matheus', 'matheus.f.riguette@gmail.com', 'Uberlândia', 'Brasil', 'MG', '123', 'Universidade', 'Admin', null);
+	(1, 'Paulo Victor', 'administrador@ufu.br', 'Uberlândia', 'Brasil', 'MG', '123', 'Universidade', 'Admin', null);
+
+INSERT INTO `users` (`id`, `name`, `email`, `city`, `country`, `state`, `password`, `location`, `role`, `parent_id`) VALUES
+  (2, 'Pesquisador', 'pesquisador@ufu.br', 'Uberlândia', 'Brasil', 'MG', '123', 'Universidade', 'Researcher', null);
+
+INSERT INTO `users` (`id`, `name`, `email`, `city`, `country`, `state`, `password`, `location`, `role`, `parent_id`) VALUES
+  (3, 'Professor', 'professor@ufu.br', 'Uberlândia', 'Brasil', 'MG', '123', 'Universidade', 'Teacher', null);
+
+INSERT INTO `users` (`id`, `name`, `email`, `city`, `country`, `state`, `password`, `location`, `role`, `parent_id`) VALUES
+  (4, 'Aluno', 'aluno@ufu.br', 'Uberlândia', 'Brasil', 'MG', '123', 'Universidade', 'Student', 3);
 
 CREATE TABLE IF NOT EXISTS `access` (
   `id` INT NOT NULL AUTO_INCREMENT,
