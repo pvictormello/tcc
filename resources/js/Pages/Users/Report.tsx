@@ -37,11 +37,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingBottom: "2px",
+    marginBottom: "8px",
     borderBottom: "1px solid black",
     fontSize: "8px",
   },
   footer: {
     paddingTop: "2px",
+    marginTop: "8px",
     borderTop: "1px solid black",
     fontSize: "8px",
   },

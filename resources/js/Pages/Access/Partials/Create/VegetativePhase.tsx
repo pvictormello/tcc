@@ -12,137 +12,133 @@ const VegetativePhase = ({ data, setData, errors }: IAccessFormProps) => {
         <div className="font-semibold">{t("Vegetative phase")}</div>
       </div>
       <div className="flex w-full flex-col gap-6 md:w-2/3 md:gap-12">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-          <FormField label={t("cod7")} error={errors.cod7}>
-            <RadioGroup gridCols="grid-cols-3">
-              <RadioGroupItem
-                label={t("Annual")}
-                name="cod7"
-                value="1"
-                checked={data.cod7 === 1}
-                onChange={(e) => setData("cod7", Number(e.target.value))}
-              />
+        <FormField label={t("cod7")} error={errors.cod7}>
+          <RadioGroup gridCols="grid-cols-3">
+            <RadioGroupItem
+              label={t("Annual")}
+              name="cod7"
+              value="1"
+              checked={data.cod7 === 1}
+              onChange={(e) => setData("cod7", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Biennial")}
-                name="cod7"
-                value="2"
-                checked={data.cod7 === 2}
-                onChange={(e) => setData("cod7", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Biennial")}
+              name="cod7"
+              value="2"
+              checked={data.cod7 === 2}
+              onChange={(e) => setData("cod7", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Perennial")}
-                name="cod7"
-                value="3"
-                checked={data.cod7 === 3}
-                onChange={(e) => setData("cod7", Number(e.target.value))}
-              />
-            </RadioGroup>
-          </FormField>
+            <RadioGroupItem
+              label={t("Perennial")}
+              name="cod7"
+              value="3"
+              checked={data.cod7 === 3}
+              onChange={(e) => setData("cod7", Number(e.target.value))}
+            />
+          </RadioGroup>
+        </FormField>
 
-          <FormField label={t("cod8")} error={errors.cod8}>
-            <RadioGroup gridCols="grid-cols-4">
-              <RadioGroupItem
-                label={t("Green")}
-                name="cod8"
-                value="1"
-                checked={data.cod8 === 1}
-                onChange={(e) => setData("cod8", Number(e.target.value))}
-              />
+        <FormField label={t("cod8")} error={errors.cod8}>
+          <RadioGroup gridCols="grid-cols-4">
+            <RadioGroupItem
+              label={t("Green")}
+              name="cod8"
+              value="1"
+              checked={data.cod8 === 1}
+              onChange={(e) => setData("cod8", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Green with purple stripes")}
-                name="cod8"
-                value="2"
-                checked={data.cod8 === 2}
-                onChange={(e) => setData("cod8", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Green with purple stripes")}
+              name="cod8"
+              value="2"
+              checked={data.cod8 === 2}
+              onChange={(e) => setData("cod8", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Purple")}
-                name="cod8"
-                value="3"
-                checked={data.cod8 === 3}
-                onChange={(e) => setData("cod8", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Purple")}
+              name="cod8"
+              value="3"
+              checked={data.cod8 === 3}
+              onChange={(e) => setData("cod8", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Others")}
-                name="cod8"
-                value="4"
-                checked={data.cod8 === 4}
-                onChange={(e) => setData("cod8", Number(e.target.value))}
-              />
-            </RadioGroup>
-          </FormField>
-        </div>
+            <RadioGroupItem
+              label={t("Others")}
+              name="cod8"
+              value="4"
+              checked={data.cod8 === 4}
+              onChange={(e) => setData("cod8", Number(e.target.value))}
+            />
+          </RadioGroup>
+        </FormField>
 
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-          <FormField label={t("cod9")} error={errors.cod9}>
-            <RadioGroup gridCols="grid-cols-4">
-              <RadioGroupItem
-                label={t("Green")}
-                name="cod9"
-                value="1"
-                checked={data.cod9 === 1}
-                onChange={(e) => setData("cod9", Number(e.target.value))}
-              />
+        <FormField label={t("cod9")} error={errors.cod9}>
+          <RadioGroup gridCols="grid-cols-4">
+            <RadioGroupItem
+              label={t("Green")}
+              name="cod9"
+              value="1"
+              checked={data.cod9 === 1}
+              onChange={(e) => setData("cod9", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Light purple")}
-                name="cod9"
-                value="3"
-                checked={data.cod9 === 3}
-                onChange={(e) => setData("cod9", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Light purple")}
+              name="cod9"
+              value="3"
+              checked={data.cod9 === 3}
+              onChange={(e) => setData("cod9", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Purple")}
-                name="cod9"
-                value="5"
-                checked={data.cod9 === 5}
-                onChange={(e) => setData("cod9", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Purple")}
+              name="cod9"
+              value="5"
+              checked={data.cod9 === 5}
+              onChange={(e) => setData("cod9", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Dark purple")}
-                name="cod9"
-                value="7"
-                checked={data.cod9 === 7}
-                onChange={(e) => setData("cod9", Number(e.target.value))}
-              />
-            </RadioGroup>
-          </FormField>
+            <RadioGroupItem
+              label={t("Dark purple")}
+              name="cod9"
+              value="7"
+              checked={data.cod9 === 7}
+              onChange={(e) => setData("cod9", Number(e.target.value))}
+            />
+          </RadioGroup>
+        </FormField>
 
-          <FormField label={t("cod10")} error={errors.cod10}>
-            <RadioGroup gridCols="grid-cols-3">
-              <RadioGroupItem
-                label={t("Cylindrical")}
-                name="cod10"
-                value="1"
-                checked={data.cod10 === 1}
-                onChange={(e) => setData("cod10", Number(e.target.value))}
-              />
+        <FormField label={t("cod10")} error={errors.cod10}>
+          <RadioGroup gridCols="grid-cols-3">
+            <RadioGroupItem
+              label={t("Cylindrical")}
+              name="cod10"
+              value="1"
+              checked={data.cod10 === 1}
+              onChange={(e) => setData("cod10", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Angled")}
-                name="cod10"
-                value="2"
-                checked={data.cod10 === 2}
-                onChange={(e) => setData("cod10", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Angled")}
+              name="cod10"
+              value="2"
+              checked={data.cod10 === 2}
+              onChange={(e) => setData("cod10", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Flattened")}
-                name="cod10"
-                value="3"
-                checked={data.cod10 === 3}
-                onChange={(e) => setData("cod10", Number(e.target.value))}
-              />
-            </RadioGroup>
-          </FormField>
-        </div>
+            <RadioGroupItem
+              label={t("Flattened")}
+              name="cod10"
+              value="3"
+              checked={data.cod10 === 3}
+              onChange={(e) => setData("cod10", Number(e.target.value))}
+            />
+          </RadioGroup>
+        </FormField>
 
         <FormField label={t("cod11")} error={errors.cod11}>
           <RadioGroup gridCols="grid-cols-3">
@@ -175,89 +171,87 @@ const VegetativePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </RadioGroup>
         </FormField>
 
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-          <FormField label={t("cod12")} error={errors.cod12}>
-            <RadioGroup gridCols="grid-cols-5">
-              <RadioGroupItem
-                label={t("< 25")}
-                name="cod12"
-                value="1"
-                checked={data.cod12 === 1}
-                onChange={(e) => setData("cod12", Number(e.target.value))}
-              />
+        <FormField label={t("cod12")} error={errors.cod12}>
+          <RadioGroup gridCols="grid-cols-5">
+            <RadioGroupItem
+              label={t("< 25")}
+              name="cod12"
+              value="1"
+              checked={data.cod12 === 1}
+              onChange={(e) => setData("cod12", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("25 - 45")}
-                name="cod12"
-                value="2"
-                checked={data.cod12 === 2}
-                onChange={(e) => setData("cod12", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("25 - 45")}
+              name="cod12"
+              value="2"
+              checked={data.cod12 === 2}
+              onChange={(e) => setData("cod12", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("46 - 65")}
-                name="cod12"
-                value="3"
-                checked={data.cod12 === 3}
-                onChange={(e) => setData("cod12", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("46 - 65")}
+              name="cod12"
+              value="3"
+              checked={data.cod12 === 3}
+              onChange={(e) => setData("cod12", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("66 - 85")}
-                name="cod12"
-                value="4"
-                checked={data.cod12 === 4}
-                onChange={(e) => setData("cod12", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("66 - 85")}
+              name="cod12"
+              value="4"
+              checked={data.cod12 === 4}
+              onChange={(e) => setData("cod12", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("> 85")}
-                name="cod12"
-                value="5"
-                checked={data.cod12 === 5}
-                onChange={(e) => setData("cod12", Number(e.target.value))}
-              />
-            </RadioGroup>
-          </FormField>
+            <RadioGroupItem
+              label={t("> 85")}
+              name="cod12"
+              value="5"
+              checked={data.cod12 === 5}
+              onChange={(e) => setData("cod12", Number(e.target.value))}
+            />
+          </RadioGroup>
+        </FormField>
 
-          <FormField label={t("cod13")} error={errors.cod13}>
-            <RadioGroup gridCols="grid-cols-4">
-              <RadioGroupItem
-                label={t("Prostrate")}
-                name="cod13"
-                value="3"
-                checked={data.cod13 === 3}
-                onChange={(e) => setData("cod13", Number(e.target.value))}
-              />
+        <FormField label={t("cod13")} error={errors.cod13}>
+          <RadioGroup gridCols="grid-cols-4">
+            <RadioGroupItem
+              label={t("Prostrate")}
+              name="cod13"
+              value="3"
+              checked={data.cod13 === 3}
+              onChange={(e) => setData("cod13", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Intermediate")}
-                name="cod13"
-                value="5"
-                checked={data.cod13 === 5}
-                onChange={(e) => setData("cod13", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Intermediate")}
+              name="cod13"
+              value="5"
+              checked={data.cod13 === 5}
+              onChange={(e) => setData("cod13", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Erect")}
-                name="cod13"
-                value="7"
-                checked={data.cod13 === 7}
-                onChange={(e) => setData("cod13", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Erect")}
+              name="cod13"
+              value="7"
+              checked={data.cod13 === 7}
+              onChange={(e) => setData("cod13", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Others")}
-                name="cod13"
-                value="9"
-                checked={data.cod13 === 9}
-                onChange={(e) => setData("cod13", Number(e.target.value))}
-              />
-            </RadioGroup>
-          </FormField>
-        </div>
+            <RadioGroupItem
+              label={t("Others")}
+              name="cod13"
+              value="9"
+              checked={data.cod13 === 9}
+              onChange={(e) => setData("cod13", Number(e.target.value))}
+            />
+          </RadioGroup>
+        </FormField>
 
-        <div className="grid grid-cols-3 gap-12">
+        <div className="grid items-end gap-6 lg:grid-cols-3 lg:gap-12">
           <FormField label={t("cod14")} error={errors.cod14}>
             <Input
               type="number"
@@ -320,63 +314,61 @@ const VegetativePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </RadioGroup>
         </FormField>
 
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-          <FormField label={t("cod18")} error={errors.cod18}>
-            <RadioGroup gridCols="grid-cols-3">
-              <RadioGroupItem
-                label={t("Sparse")}
-                name="cod18"
-                value="3"
-                checked={data.cod18 === 3}
-                onChange={(e) => setData("cod18", Number(e.target.value))}
-              />
+        <FormField label={t("cod18")} error={errors.cod18}>
+          <RadioGroup gridCols="grid-cols-3">
+            <RadioGroupItem
+              label={t("Sparse")}
+              name="cod18"
+              value="3"
+              checked={data.cod18 === 3}
+              onChange={(e) => setData("cod18", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Intermediate")}
-                name="cod18"
-                value="5"
-                checked={data.cod18 === 5}
-                onChange={(e) => setData("cod18", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Intermediate")}
+              name="cod18"
+              value="5"
+              checked={data.cod18 === 5}
+              onChange={(e) => setData("cod18", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Dense")}
-                name="cod18"
-                value="7"
-                checked={data.cod18 === 7}
-                onChange={(e) => setData("cod18", Number(e.target.value))}
-              />
-            </RadioGroup>
-          </FormField>
+            <RadioGroupItem
+              label={t("Dense")}
+              name="cod18"
+              value="7"
+              checked={data.cod18 === 7}
+              onChange={(e) => setData("cod18", Number(e.target.value))}
+            />
+          </RadioGroup>
+        </FormField>
 
-          <FormField label={t("cod19")} error={errors.cod19}>
-            <RadioGroup gridCols="grid-cols-3">
-              <RadioGroupItem
-                label={t("Sparse")}
-                name="cod19"
-                value="3"
-                checked={data.cod19 === 3}
-                onChange={(e) => setData("cod19", Number(e.target.value))}
-              />
+        <FormField label={t("cod19")} error={errors.cod19}>
+          <RadioGroup gridCols="grid-cols-3">
+            <RadioGroupItem
+              label={t("Sparse")}
+              name="cod19"
+              value="3"
+              checked={data.cod19 === 3}
+              onChange={(e) => setData("cod19", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Intermediate")}
-                name="cod19"
-                value="5"
-                checked={data.cod19 === 5}
-                onChange={(e) => setData("cod19", Number(e.target.value))}
-              />
+            <RadioGroupItem
+              label={t("Intermediate")}
+              name="cod19"
+              value="5"
+              checked={data.cod19 === 5}
+              onChange={(e) => setData("cod19", Number(e.target.value))}
+            />
 
-              <RadioGroupItem
-                label={t("Dense")}
-                name="cod19"
-                value="7"
-                checked={data.cod19 === 7}
-                onChange={(e) => setData("cod19", Number(e.target.value))}
-              />
-            </RadioGroup>
-          </FormField>
-        </div>
+            <RadioGroupItem
+              label={t("Dense")}
+              name="cod19"
+              value="7"
+              checked={data.cod19 === 7}
+              onChange={(e) => setData("cod19", Number(e.target.value))}
+            />
+          </RadioGroup>
+        </FormField>
 
         <FormField label={t("cod20")} error={errors.cod20}>
           <RadioGroup gridCols="grid-cols-4">
@@ -536,7 +528,7 @@ const VegetativePhase = ({ data, setData, errors }: IAccessFormProps) => {
           </RadioGroup>
         </FormField>
 
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+        <div className="grid items-end gap-6 lg:grid-cols-2 lg:gap-12">
           <FormField label={t("cod24")} error={errors.cod24}>
             <Input
               type="number"

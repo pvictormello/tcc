@@ -37,11 +37,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingBottom: "2px",
+    marginBottom: "8px",
     borderBottom: "1px solid black",
     fontSize: "8px",
   },
   footer: {
     paddingTop: "2px",
+    marginTop: "8px",
     borderTop: "1px solid black",
     fontSize: "8px",
   },
@@ -70,6 +72,10 @@ const styles = StyleSheet.create({
   },
   label: {
     fontWeight: "medium",
+  },
+  image: {
+    width: "200px",
+    marginTop: "14px",
   },
 });
 
@@ -834,9 +840,14 @@ const Report = ({
 
           {reproductivePhase.cod70 === null && <Text>-</Text>}
         </View>
-      </View>
 
-      <Text style={styles.subtitle}>{t("Images")}</Text>
+        <View>
+          <Text style={styles.subtitle}>{t("Images")}</Text>
+          {images.map((image) => (
+            <Image src={`/images/uploads/${image.name}`} style={styles.image} />
+          ))}
+        </View>
+      </View>
 
       <View style={styles.footer} fixed>
         <Text>Relatório gerado em: {formatDateTime(new Date())}</Text>

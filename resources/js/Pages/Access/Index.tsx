@@ -1,14 +1,6 @@
 import { useState } from "react";
 import { Head, Link, router } from "@inertiajs/react";
-import {
-  IAccess,
-  IAccessImage,
-  IPaginatedData,
-  IProtectedPageProps,
-  IReproductivePhase,
-  ISeedlingPhase,
-  IVegetativePhase,
-} from "@/types";
+import { IAccess, IPaginatedData, IProtectedPageProps } from "@/types";
 import Layout from "@/Layouts/Layout";
 import { useTranslation } from "react-i18next";
 
@@ -26,13 +18,14 @@ import {
   TrashIcon,
   ArrowDownTrayIcon,
 } from "@heroicons/react/24/outline";
-import { FunnelIcon, PlusIcon, ChevronDownIcon, ChevronUpDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import { FunnelIcon, ChevronDownIcon, ChevronUpDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import Input from "@/Components/Input";
 import Pagination from "@/Components/Pagination";
-import { pdf } from "@react-pdf/renderer";
+import { PDFDownloadLink, pdf } from "@react-pdf/renderer";
 import Report from "./Report";
 import axios from "axios";
 import { saveAs } from "file-saver";
+import ReportAll from "./ReportAll";
 
 const Index = ({
   auth,
@@ -149,7 +142,14 @@ const Index = ({
               <div className="text-lg font-semibold">{t("Access")}</div>
 
               <div className="mt-0 flex items-center gap-6">
-                <Button color="secondary">{t("Download report")}</Button>
+                <Button color="secondary">
+                  <PDFDownloadLink
+                    document={<ReportAll access={access.data} />}
+                    fileName={`${t("Access report")}_${Date.now()}.pdf`}
+                  >
+                    {t("Download report")}
+                  </PDFDownloadLink>
+                </Button>
 
                 <Link href={route("access.create")}>
                   <Button>{t("Add access")}</Button>

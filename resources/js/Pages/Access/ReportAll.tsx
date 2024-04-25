@@ -1,5 +1,5 @@
-import { IUser } from "@/types";
-import { formatDateTime } from "@/utils";
+import { IAccess, IUser } from "@/types";
+import { formatDate, formatDateTime } from "@/utils";
 import { Page, Text, View, Document, StyleSheet, Font } from "@react-pdf/renderer";
 import { t } from "i18next";
 
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const ReportAll = ({ users }: { users: IUser[] }) => (
+const ReportAll = ({ access }: { access: IAccess[] }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.header} fixed>
@@ -86,35 +86,59 @@ const ReportAll = ({ users }: { users: IUser[] }) => (
       <Text style={styles.title}>{t("User report")}</Text>
 
       <View style={styles.section}>
-        {users.map((user, index) => (
+        {access.map((access, index) => (
           <View style={[styles.item, { ...(index === 0 && { borderTop: "none" }) }]}>
             <View style={[styles.text, { marginTop: "0px" }]}>
-              <Text style={styles.label}>{t("Full name")}</Text>
-              <Text>{user.name}</Text>
+              <Text style={styles.label}>{t("Sample")}</Text>
+              <Text>{access.sample}</Text>
             </View>
             <View style={styles.text}>
-              <Text style={styles.label}>{t("Email")}</Text>
-              <Text>{user.email}</Text>
+              <Text style={styles.label}>{t("Species")}</Text>
+              <Text>{access.species}</Text>
             </View>
             <View style={styles.text}>
-              <Text style={styles.label}>{t("City")}</Text>
-              <Text>{user.city}</Text>
-            </View>
-            <View style={styles.text}>
-              <Text style={styles.label}>{t("State")}</Text>
-              <Text>{user.state}</Text>
+              <Text style={styles.label}>{t("Variety")}</Text>
+              <Text>{access.variety}</Text>
             </View>
             <View style={styles.text}>
               <Text style={styles.label}>{t("Country")}</Text>
-              <Text>{user.country}</Text>
+              <Text>{access.country}</Text>
             </View>
             <View style={styles.text}>
-              <Text style={styles.label}>{t("Workspace")}</Text>
-              <Text>{user.location}</Text>
+              <Text style={styles.label}>{t("Color")}</Text>
+              <Text>{access.color}</Text>
             </View>
             <View style={styles.text}>
-              <Text style={styles.label}>{t("Role")}</Text>
-              <Text>{user.role}</Text>
+              <Text style={styles.label}>{t("Generation")}</Text>
+              <Text>{access.generation}</Text>
+            </View>
+            <View style={styles.text}>
+              <Text style={styles.label}>{t("Producer name")}</Text>
+              <Text>{access.producer_name}</Text>
+            </View>
+            <View style={styles.text}>
+              <Text style={styles.label}>{t("Geodetic coordinates")}</Text>
+              <Text>{access.coordinates}</Text>
+            </View>
+            <View style={styles.text}>
+              <Text style={styles.label}>{t("Location")}</Text>
+              <Text>{access.location}</Text>
+            </View>
+            <View style={styles.text}>
+              <Text style={styles.label}>{t("Contact phone")}</Text>
+              <Text>{access.phone}</Text>
+            </View>
+            <View style={styles.text}>
+              <Text style={styles.label}>{t("Collection date")}</Text>
+              <Text>{formatDate(access.collection_date)}</Text>
+            </View>
+            <View style={styles.text}>
+              <Text style={styles.label}>{t("Sample observation")}</Text>
+              <Text>{access.observation}</Text>
+            </View>
+            <View style={styles.text}>
+              <Text style={styles.label}>{t("Created by")}</Text>
+              <Text>{access.created_by.name}</Text>
             </View>
           </View>
         ))}
