@@ -22,8 +22,8 @@ const Create = ({ auth, parentUsers }: IProtectedPageProps<{ parentUsers: IUser[
     country: "",
     location: "",
     role: "Student",
-    parent: null,
-    parent_id: auth.user.role === "Admin" ? null : auth.user.id,
+    parent: undefined,
+    parent_id: auth.user.role === "Admin" ? undefined : auth.user.id,
   });
 
   const submit: FormEventHandler = (e) => {

@@ -21,7 +21,7 @@ const Edit = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
     country: user.country,
     location: user.location,
     role: user.role,
-    parent: user.parent_id ? (parentUsers.find((parentUser) => parentUser.id === user.parent_id) as IUser) : null,
+    parent: user.parent_id ? (parentUsers.find((parentUser) => parentUser.id === user.parent_id) as IUser) : undefined,
     parent_id: user.parent_id,
   });
 
@@ -131,7 +131,7 @@ const Edit = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
                         value="Student"
                         checked={data.role === "Student"}
                         onChange={(e) =>
-                          setData({ ...data, ...{ parent_id: null, parent: null, role: e.target.value as Role } })
+                          setData({ ...data, ...{ parent_id: undefined, parent: undefined, role: e.target.value as Role } })
                         }
                       />
 
@@ -141,7 +141,7 @@ const Edit = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
                         value="Teacher"
                         checked={data.role === "Teacher"}
                         onChange={(e) =>
-                          setData({ ...data, ...{ parent_id: null, parent: null, role: e.target.value as Role } })
+                          setData({ ...data, ...{ parent_id: undefined, parent: undefined, role: e.target.value as Role } })
                         }
                       />
 
@@ -151,7 +151,7 @@ const Edit = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
                         value="Researcher"
                         checked={data.role === "Researcher"}
                         onChange={(e) =>
-                          setData({ ...data, ...{ parent_id: null, parent: null, role: e.target.value as Role } })
+                          setData({ ...data, ...{ parent_id: undefined, parent: undefined, role: e.target.value as Role } })
                         }
                       />
 
@@ -161,7 +161,7 @@ const Edit = ({ auth, user, parentUsers }: IProtectedPageProps<{ user: IUser; pa
                         value="Admin"
                         checked={data.role === "Admin"}
                         onChange={(e) =>
-                          setData({ ...data, ...{ parent_id: null, parent: null, role: e.target.value as Role } })
+                          setData({ ...data, ...{ parent_id: undefined, parent: undefined, role: e.target.value as Role } })
                         }
                       />
                     </RadioGroup>
