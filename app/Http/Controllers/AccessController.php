@@ -34,7 +34,7 @@ class AccessController extends Controller
                 });
             })
             ->when($role === "Student", function ($query) use ($user) {
-                return $query->where('owner_id', $user->id);
+                return $query->where('created_by_id', $user->id)->orWhere('owner_id', $user->parent_id)->orWhere('public', 1);
             })
             ->when($role === "Teacher" || $role === "Researcher", function ($query) use ($user) {
                 return $query->where('owner_id', $user->id)->orWhere('public', 1);

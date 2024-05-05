@@ -130,7 +130,7 @@ const ReportAll = ({ access }: { access: IAccess[] }) => (
             </View>
             <View style={styles.text}>
               <Text style={styles.label}>{t("Collection date")}</Text>
-              <Text>{formatDate(new Date(access.collection_date))}</Text>
+              <Text>{access.collection_date ? formatDate(new Date(access.collection_date)) : "-"}</Text>
             </View>
             <View style={styles.text}>
               <Text style={styles.label}>{t("Sample observation")}</Text>
